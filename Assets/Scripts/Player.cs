@@ -7,11 +7,21 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     
-    public float spawnAreaWidth = 10f;
-    public float spawnAreaHeight = 5f;
+    [SerializeField] private float spawnAreaWidth = 10f;
+    [SerializeField] private float spawnAreaHeight = 5f;
 
-    public bool isDead;
+    [SerializeField] private float respawnDelay = 2f;
+
+    [SerializeField] private bool isDead;
     
+    [Header("Bullying State")]
+    [SerializeField] private bool isBullying;
+
+    public bool IsBullying
+    {
+        get => isBullying;
+        set => isBullying = value;
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -19,28 +29,25 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isBullying)
         {
             isDead = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             StartCoroutine(RespawnPlayer());
         }
-        else gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        
-        if(Input.GetKeyDown(KeyCode.Space)) DeceaseHealth(10);
 
-        // if (GameManager.Instance.GetComponentInChildren<TurnBasedManagement>().Timer > 0) StartCoroutine(RespawnPlayer());
+        if(Input.GetKeyDown(KeyCode.Space)) DeceaseHealth(10);
     }
 
     public void DeceaseHealth(float value)
     {
-        if (currentHealth > 0) currentHealth -= value;
-        if (currentHealth <= 0) {currentHealth = 0;}
+        if (currentHealth > 0 && !isBullying) currentHealth -= value;
+        if (currentHealth <= 0 && !isBullying) {currentHealth = 0;}
     }
 
     IEnumerator RespawnPlayer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(respawnDelay);
         if (GameManager.Instance.GetComponentInChildren<TurnBasedManagement>().Timer > 0 && isDead)
         {
             float randomX = Random.Range(-spawnAreaWidth / 2, spawnAreaWidth / 2);
@@ -49,6 +56,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(randomX, randomY, 0f);
             isDead = false;
             currentHealth = maxHealth;
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

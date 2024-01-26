@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b34c8e5587c3046968b74750e85f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
   player1ScoreText: {fileID: 0}
   player2ScoreText: {fileID: 0}
 --- !u!114 &362834835
@@ -325,7 +324,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  dashSpeed: 10
+  dashDuration: 0.2
+  dashCooldown: 2
   smoothTime: 0.1
+  moveLeftKey: 97
+  moveRightKey: 100
+  moveUpKey: 119
+  moveDownKey: 115
+  dashKey: 304
+  spriteTransform: {fileID: 534447277}
+  DashEffect: {fileID: 0}
   _springRotation: {fileID: 534447274}
 --- !u!212 &534447276
 SpriteRenderer:
@@ -470,10 +479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34da539d168b3b8489ff69867aa99bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 10
   currentHealth: 0
   spawnAreaWidth: 10
   spawnAreaHeight: 5
+  isDead: 0
+  isBullying: 0
 --- !u!1 &733816405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1241,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  dashSpeed: 10
+  dashDuration: 0.2
+  dashCooldown: 2
   smoothTime: 0.1
+  moveLeftKey: 97
+  moveRightKey: 100
+  moveUpKey: 119
+  moveDownKey: 115
+  dashKey: 304
+  spriteTransform: {fileID: 1889227941}
+  DashEffect: {fileID: 0}
   _springRotation: {fileID: 1889227938}
 --- !u!212 &1889227940
 SpriteRenderer:
@@ -1317,6 +1338,8 @@ MonoBehaviour:
   currentHealth: 0
   spawnAreaWidth: 10
   spawnAreaHeight: 5
+  isDead: 0
+  isBullying: 0
 --- !u!1 &1920099306
 GameObject:
   m_ObjectHideFlags: 0
