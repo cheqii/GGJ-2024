@@ -175,6 +175,7 @@ MonoBehaviour:
   playerList:
   - {fileID: 534447280}
   - {fileID: 1889227942}
+  endRoundEvent: {fileID: 11400000, guid: 3f66f39cdb3149b43848e156b9cca0fc, type: 2}
 --- !u!114 &362834835
 MonoBehaviour:
   m_ObjectHideFlags: 0

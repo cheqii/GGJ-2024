@@ -7,13 +7,14 @@ public class TurnBasedManagement : MonoBehaviour
 {
     [Header("Timer")] 
     [SerializeField] private TextMeshProUGUI timerText;
-    
     [SerializeField] private float turnTime;
     [SerializeField] private float timer;
 
+    [Header("About Player")]
     [SerializeField] private bool player1BullyTurn;
-
     [SerializeField] private List<Player> playerList;
+    
+    [SerializeField] private Nf_GameEvent endRoundEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class TurnBasedManagement : MonoBehaviour
 
         if (timer <= 0)
         {
-            RandomWeapon();
+            StartCoroutine(EndTurn());
             StartTurn();
         }
     }
@@ -64,10 +65,12 @@ public class TurnBasedManagement : MonoBehaviour
         player1BullyTurn = !player1BullyTurn;
     }
 
-    void RandomWeapon()
+    IEnumerator EndTurn()
     {
         // End turn logic, if any
         // random new weapon
+        endRoundEvent.Raise();
+        yield return new WaitForSeconds(2f);
     }
 
     void Player1BullyTurn()
