@@ -13,6 +13,8 @@ public class WeaponRotate : MonoBehaviour
     public float desiredRotationAngle = 90f;
     public float delayBetweenRotations = 1f; // Adjust the delay between rotations
 
+    public Transform PlayerSprite;
+
     void Start()
     {
         // Store the default rotation of the object
@@ -21,13 +23,10 @@ public class WeaponRotate : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-
         if (Input.GetKeyDown(KeyCode.Space) && !isRotating)
         {
             // Rotate the object smoothly using Lerp with the desired rotation angle
-            float rotationDirection = (horizontalInput > 0) ? 1f : -1f;
-            StartCoroutine(RotateObjectCoroutine(rotationDirection * desiredRotationAngle, rotationSpeed, rotationBackSpeed, delayBetweenRotations));
+            StartCoroutine(RotateObjectCoroutine(desiredRotationAngle, rotationSpeed, rotationBackSpeed, delayBetweenRotations));
         }
     }
 
@@ -35,9 +34,12 @@ public class WeaponRotate : MonoBehaviour
     {
         isRotating = true;
 
+        // Determine the rotation direction based on the object's X scale
+        float rotationDirection = (PlayerSprite.localScale.x > 0) ? 1f : -1f;
+
         // Rotate the object
         Quaternion startRotation = transform.rotation;
-        Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.forward * desiredRotation);
+        Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.forward * (rotationDirection * desiredRotation));
         float duration = Mathf.Abs(desiredRotation) / rotateSpeed; // Adjust duration based on desired rotation
 
         float t = 0;

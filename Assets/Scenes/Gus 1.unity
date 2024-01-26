@@ -1014,7 +1014,8 @@ MonoBehaviour:
   rotationSpeed: 1000
   rotationBackSpeed: 500
   desiredRotationAngle: -90
-  delayBetweenRotations: 1
+  delayBetweenRotations: 0.2
+  PlayerSprite: {fileID: 534447277}
 --- !u!1 &1804872160
 GameObject:
   m_ObjectHideFlags: 0
