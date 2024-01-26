@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int playerIndex;
+    
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     
