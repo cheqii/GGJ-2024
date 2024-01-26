@@ -3,29 +3,28 @@ using UnityEngine;
 
 public class WeaponRotate : MonoBehaviour
 {
-    public float rotationSpeed = 45f; // Adjust the speed of rotation
-    public float rotationBackSpeed = 30f; // Adjust the speed of rotation back to default
-
+    public float rotationSpeed = 45f;
+    public float rotationBackSpeed = 30f;
     private Quaternion defaultRotation;
     private bool isRotating = false;
 
-    // Variable to store the desired rotation angle (set in the Inspector)
     public float desiredRotationAngle = 90f;
-    public float delayBetweenRotations = 1f; // Adjust the delay between rotations
-
+    public float delayBetweenRotations = 1f;
     public Transform PlayerSprite;
+
+    // Serialized variable for customizable keycode
+    [SerializeField]
+    private KeyCode rotationKeyCode = KeyCode.Space;
 
     void Start()
     {
-        // Store the default rotation of the object
         defaultRotation = transform.rotation;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isRotating)
+        if (Input.GetKeyDown(rotationKeyCode) && !isRotating)
         {
-            // Rotate the object smoothly using Lerp with the desired rotation angle
             StartCoroutine(RotateObjectCoroutine(desiredRotationAngle, rotationSpeed, rotationBackSpeed, delayBetweenRotations));
         }
     }
@@ -34,13 +33,11 @@ public class WeaponRotate : MonoBehaviour
     {
         isRotating = true;
 
-        // Determine the rotation direction based on the object's X scale
         float rotationDirection = (PlayerSprite.localScale.x > 0) ? 1f : -1f;
 
-        // Rotate the object
         Quaternion startRotation = transform.rotation;
         Quaternion targetRotation = startRotation * Quaternion.Euler(Vector3.forward * (rotationDirection * desiredRotation));
-        float duration = Mathf.Abs(desiredRotation) / rotateSpeed; // Adjust duration based on desired rotation
+        float duration = Mathf.Abs(desiredRotation) / rotateSpeed;
 
         float t = 0;
 
@@ -51,12 +48,10 @@ public class WeaponRotate : MonoBehaviour
             yield return null;
         }
 
-        // Wait for a specified delay
         yield return new WaitForSeconds(delayBetweenRotations);
 
-        // Rotate the object back to the default rotation
         t = 0;
-        duration = Mathf.Abs(desiredRotation) / rotateBackSpeed; // Adjust duration based on desired rotation back
+        duration = Mathf.Abs(desiredRotation) / rotateBackSpeed;
         while (t < 1f)
         {
             t += Time.deltaTime / duration;

@@ -1,17 +1,33 @@
+using System;
 using UnityEngine;
 
-public class CrosshairFollow : MonoBehaviour
+public class SmoothFollow : MonoBehaviour
 {
     public Transform player;
     public float smoothSpeed = 5f;
     public float maxDistance = 2f; // Maximum distance from the player
     public float hideThreshold = 0.5f; // Threshold for hiding the crosshair
 
+    private KeyCode moveUpKey = KeyCode.W;
+    private KeyCode moveDownKey = KeyCode.S;
+    private KeyCode moveLeftKey = KeyCode.A;
+    private KeyCode moveRightKey = KeyCode.D;
+
+
+    private void Start()
+    {
+        var p = player.GetComponent<PlayerMovement>();
+        moveUpKey = p.moveUpKey;
+        moveDownKey = p.moveDownKey;
+        moveLeftKey = p.moveLeftKey;
+        moveRightKey = p.moveRightKey;
+    }
+
     void Update()
     {
-        // Get player input
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        // Get player input using customized keycodes
+        float horizontalInput = Input.GetKey(moveRightKey) ? 1f : (Input.GetKey(moveLeftKey) ? -1f : 0f);
+        float verticalInput = Input.GetKey(moveUpKey) ? 1f : (Input.GetKey(moveDownKey) ? -1f : 0f);
 
         // Calculate target position based on player input
         Vector2 targetPosition = player.position + new Vector3(horizontalInput, verticalInput, 0) * maxDistance;
