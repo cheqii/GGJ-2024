@@ -1,30 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageMovement : MonoBehaviour
+public class RandomItem : MonoBehaviour
 {
-    public List<Sprite> imageList;
-    public float initialSpeed = 720.0f;
-    public float acceleration = 10.0f;
-    public int totalRounds = 20;
-    public float easeInOutDuration = 1.0f; // Duration for ease-in-out curve
+    [Header("Weapon Data")]
+    [SerializeField] private List<WeaponData> weapons;
+    [SerializeField] private List<Sprite> imageList;
+    [SerializeField] private TMP_Text weaponNameText;
+
+    [Header("Random Speed")]
+    [SerializeField] private float initialSpeed = 1000.0f;
+    [SerializeField] private float acceleration = 10.0f;
+    [SerializeField] private float easeInOutDuration = 1.0f; // Duration for ease-in-out curve
+
+    [Header("Round")]
+    [SerializeField] private int totalRounds = 20;
+    [SerializeField] private int currentRound = 0;
 
     private RectTransform rectTransform;
-    [SerializeField] private int currentRound = 0;
     private bool isMoving = false; // Flag to check if the movement should start
 
-    void Start()
+    private void Start()
     {
+        weaponNameText.text = "";
         rectTransform = GetComponent<RectTransform>();
     }
 
-    void Update()
+    private void Update()
     {
+        // Press F to start random!
         if (Input.GetKeyDown(KeyCode.F) && currentRound < totalRounds && !isMoving)
         {
             StartMoving();
+            weaponNameText.text = "";
         }
 
         if (isMoving && currentRound < totalRounds)
@@ -33,13 +44,14 @@ public class ImageMovement : MonoBehaviour
         }
     }
 
-    void StartMoving()
+    // Use this method to start random!
+    public void StartMoving()
     {
         isMoving = true;
         StartCoroutine(MoveRoutine());
     }
 
-    void MoveImage()
+    private void MoveImage()
     {
         if (currentRound == totalRounds - 1) // Check if it's the last lap
         {
@@ -54,7 +66,20 @@ public class ImageMovement : MonoBehaviour
                 isMoving = false; // Stop movement after the last lap
 
                 // Do something when the randomization is done here!
-                Debug.Log("Final round result: " + imageList[currentRound % imageList.Count].name); // Use the current round as an index
+                Image imageComponent = GetComponent<Image>();
+                string spriteName = imageComponent ? imageComponent.sprite?.name : "No Sprite";
+
+                Debug.Log("Source image name: " + spriteName);
+
+                // Check if spriteName matches any WeaponData.weaponIcon.name
+                WeaponData selectedWeapon = weapons.Find(weapon => weapon.weaponIcon.name == spriteName);
+                if (selectedWeapon != null)
+                {
+                    // Get data from WeaponData
+                    Debug.Log("Weapon name: " + selectedWeapon.weaponName);
+                    weaponNameText.text = selectedWeapon.weaponName;
+                }
+
                 currentRound = 0; // Reset currentRound for the next iteration
             }
         }
@@ -62,15 +87,15 @@ public class ImageMovement : MonoBehaviour
         {
             float t;
 
-            if (currentRound < 5) // First 5 laps: Random slot machine-like speed changes
+            if (currentRound <= 5) // First 5 laps: Random slot machine-like speed changes
             {
                 t = Mathf.SmoothStep(0, 1, Random.Range(0.0f, 1.0f));
             }
-            else if (currentRound >= 5 && currentRound < 16) // Laps 6-15: Constant speed
+            else if (currentRound > 4 && currentRound < totalRounds - 4) // Laps 6-15: Constant speed
             {
                 t = 1.0f;
             }
-            else // Laps 16-20: Random slot machine-like speed changes
+            else
             {
                 t = Mathf.SmoothStep(0, 1, Random.Range(0.0f, 1.0f));
             }
@@ -86,7 +111,7 @@ public class ImageMovement : MonoBehaviour
         }
     }
 
-    void ChangeImage()
+    private void ChangeImage()
     {
         int randomIndex = Random.Range(0, imageList.Count);
         GetComponent<Image>().sprite = imageList[randomIndex];
