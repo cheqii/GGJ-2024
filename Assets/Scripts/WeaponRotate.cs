@@ -11,6 +11,7 @@ public class WeaponRotate : MonoBehaviour
 
     // Variable to store the desired rotation angle (set in the Inspector)
     public float desiredRotationAngle = 90f;
+    public float delayBetweenRotations = 1f; // Adjust the delay between rotations
 
     void Start()
     {
@@ -20,14 +21,17 @@ public class WeaponRotate : MonoBehaviour
 
     void Update()
     {
+        float horizontalInput = Input.GetAxis("Horizontal");
+
         if (Input.GetKeyDown(KeyCode.Space) && !isRotating)
         {
             // Rotate the object smoothly using Lerp with the desired rotation angle
-            StartCoroutine(RotateObjectCoroutine(desiredRotationAngle, rotationSpeed, rotationBackSpeed));
+            float rotationDirection = (horizontalInput > 0) ? 1f : -1f;
+            StartCoroutine(RotateObjectCoroutine(rotationDirection * desiredRotationAngle, rotationSpeed, rotationBackSpeed, delayBetweenRotations));
         }
     }
 
-    IEnumerator RotateObjectCoroutine(float desiredRotation, float rotateSpeed, float rotateBackSpeed)
+    IEnumerator RotateObjectCoroutine(float desiredRotation, float rotateSpeed, float rotateBackSpeed, float delayBetweenRotations)
     {
         isRotating = true;
 
@@ -45,8 +49,8 @@ public class WeaponRotate : MonoBehaviour
             yield return null;
         }
 
-        // Wait for a short time (you can customize this duration)
-        yield return new WaitForSeconds(1f);
+        // Wait for a specified delay
+        yield return new WaitForSeconds(delayBetweenRotations);
 
         // Rotate the object back to the default rotation
         t = 0;
