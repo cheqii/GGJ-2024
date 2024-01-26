@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int playerIndex;
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     
@@ -57,6 +58,18 @@ public class Player : MonoBehaviour
             isDead = false;
             currentHealth = maxHealth;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            
+            if (playerIndex == 1 && !isBullying) // if player1 is bullying then player 1 will get score by bully player 2
+            {
+                print($"Player 1 get score");
+                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer1Score(1);
+            }
+
+            if (playerIndex == 0 && !isBullying) // if player2 is bullying then player 2 will get score by bully player 1
+            {
+                print($"Player 2 get score");
+                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer2Score(1);
+            }
         }
     }
 }
