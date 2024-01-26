@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SpriteFlip : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    private Transform spriteTransform;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteTransform = GetComponent<Transform>();
     }
 
     void Update()
@@ -19,12 +19,12 @@ public class SpriteFlip : MonoBehaviour
         if (horizontalInput > 0)
         {
             // Moving right
-            spriteRenderer.flipX = false;
+            spriteTransform.localScale = new Vector3(1, 1, 1);
         }
         else if (horizontalInput < 0)
         {
             // Moving left
-            spriteRenderer.flipX = true;
+            spriteTransform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
