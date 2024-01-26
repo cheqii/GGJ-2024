@@ -6,12 +6,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Player 1")]
-    [SerializeField] private TextMeshProUGUI player1ScoreText;
-    [SerializeField] private float player1ScoreCount;
+    public TextMeshProUGUI player1ScoreText;
 
     [Header("Player 2")]
-    [SerializeField] private TextMeshProUGUI player2ScoreText;
-    [SerializeField] private float player2ScoreCount;
+    public TextMeshProUGUI player2ScoreText;
 
     private void Awake()
     {

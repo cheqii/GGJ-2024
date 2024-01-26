@@ -10,6 +10,12 @@ public class TurnBasedManagement : MonoBehaviour
     [SerializeField] private float turnTime;
     [SerializeField] private float timer;
 
+    public float Timer
+    {
+        get => timer;
+        set => timer = value;
+    }
+
     [Header("About Player")]
     [SerializeField] private bool player1BullyTurn;
     [SerializeField] private List<Player> playerList;
@@ -33,7 +39,8 @@ public class TurnBasedManagement : MonoBehaviour
             int minutes = Mathf.FloorToInt(timer / 60);
             int seconds = Mathf.FloorToInt(timer % 60);
 
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            // timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = seconds.ToString();
         }
 
         if (timer <= 0)
