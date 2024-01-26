@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 2104810997}
-  turnTime: 20
+  turnTime: 5
   timer: 0
   player1BullyTurn: 1
   playerList:

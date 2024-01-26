@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/SpriteFlip.cs.meta
-guid: fc2f0b33a220dcc49b55203364a16fde
-========
-guid: 50b02feabfa44714caa56be0ecd21da3
->>>>>>>> origin/qiqiInwza007:Assets/Scripts/Player.cs.meta
+guid: 6cedc69f109d0844db4da0631a870487
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

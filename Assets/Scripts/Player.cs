@@ -4,37 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Is Bullying")]
-    [SerializeField] private bool isBullying;
-
-    public bool IsBullying
-    {
-        get => isBullying;
-        set => isBullying = value;
-    }
-
-    [Header("Get Bully")]
-    [SerializeField] private bool getBully;
-
-    public bool GetBully
-    {
-        get => getBully;
-        set => getBully = value;
-    }
-    // Start is called before the first frame update
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float currentHealth;
+    
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
 
-    public void CheckBullyState()
+    public void DeceaseHealth(float value)
     {
-        
+        if (currentHealth > 0) currentHealth -= value;
+        if (currentHealth <= 0) currentHealth = 0;
     }
+    
 }
