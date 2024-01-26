@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Anim/Crosshair.anim.meta
+guid: 47f81224bca63dd4584d35dcc414bd26
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+========
+guid: 3f66f39cdb3149b43848e156b9cca0fc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> origin/qiqiInwza007:Assets/NF_Event/RoundEnd.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
