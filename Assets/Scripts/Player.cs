@@ -51,6 +51,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float respawnDelay;
 
     [SerializeField] private bool isDead;
+
+    public bool IsDead
+    {
+        get => isDead;
+        set => isDead = value;
+    }
     
     [Header("Bullying State")]
     [SerializeField] private bool isBullying;
@@ -125,7 +131,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        transform.position = new Vector3(100f, 100f, 1f);
+        transform.position = new Vector3(1000f, 1000f, 1f);
     }
 
     IEnumerator RespawnPlayer()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BgBounds : MonoBehaviour
@@ -15,10 +13,11 @@ public class BgBounds : MonoBehaviour
 
         // Get the bounds of the background collider
         Bounds bounds = GetComponent<Collider2D>().bounds;
-
+        
         foreach (GameObject player in players)
         {
-            if (player != null)
+            var checkPlayer = player.GetComponent<Player>();
+            if (player != null && !checkPlayer.IsDead)
             {
                 // Get the player's collider size and position
                 Collider2D playerCollider = player.GetComponent<Collider2D>();
