@@ -1,4 +1,5 @@
 using System.Collections;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class WeaponRotate : MonoBehaviour
@@ -11,6 +12,8 @@ public class WeaponRotate : MonoBehaviour
     public float desiredRotationAngle = 90f;
     public float delayBetweenRotations = 1f;
     public Transform PlayerSprite;
+
+    public MMF_Player Crosshair_feedback;
 
     // Serialized variable for customizable keycode
     [SerializeField]
@@ -26,6 +29,7 @@ public class WeaponRotate : MonoBehaviour
         if (Input.GetKeyDown(rotationKeyCode) && !isRotating)
         {
             StartCoroutine(RotateObjectCoroutine(desiredRotationAngle, rotationSpeed, rotationBackSpeed, delayBetweenRotations));
+            Crosshair_feedback.PlayFeedbacks();
         }
     }
 
