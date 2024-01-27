@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5322293083861485139}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6412174456806529021}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.11, y: -1.29, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -54,11 +54,11 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 2
   smoothTime: 0.1
-  moveLeftKey: 97
-  moveRightKey: 100
-  moveUpKey: 119
-  moveDownKey: 115
-  dashKey: 304
+  moveLeftKey: 276
+  moveRightKey: 275
+  moveUpKey: 273
+  moveDownKey: 274
+  dashKey: 303
   spriteTransform: {fileID: 8215766891598661509}
   DashEffect: {fileID: 2234395927324322915}
   _springRotation: {fileID: 3280230673039977066}
@@ -136,8 +136,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039494354, y: 0.18167655}
-  m_Size: {x: 0.19193867, y: 0.36807987}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.19193871, y: 0.3880418}
   m_Direction: 0
 --- !u!114 &5322293083861485139
 MonoBehaviour:
@@ -153,11 +153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   playerPrefab: {fileID: 825340988078280685, guid: c7d512b41db79d44485049da2af95af0, type: 3}
-  maxHealth: 10
+  maxHealth: 20
   currentHealth: 0
+  _microBar: {fileID: 0}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 2
+  respawnDelay: 1
   isDead: 0
   isBullying: 0
 --- !u!1001 &5207253281503391209
@@ -178,7 +179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199506804337044076, guid: c7d512b41db79d44485049da2af95af0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: 4199506804337044076, guid: c7d512b41db79d44485049da2af95af0, type: 3}
       propertyPath: m_LocalPosition.z

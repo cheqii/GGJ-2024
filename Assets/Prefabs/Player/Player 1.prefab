@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4255091520757887877}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783944270913444191}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.26, y: -1.29, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -136,7 +136,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0039494354, y: 0.18167655}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.19193867, y: 0.36807987}
   m_Direction: 0
 --- !u!114 &4255091520757887877
@@ -153,11 +153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   playerPrefab: {fileID: 4254231273291973276, guid: b9fa264067d3c8c4d962ff10a67a3baf, type: 3}
-  maxHealth: 10
+  maxHealth: 20
   currentHealth: 0
+  _microBar: {fileID: 0}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 2
+  respawnDelay: 1
   isDead: 0
   isBullying: 0
 --- !u!1001 &3561632247248738451
@@ -190,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061969791976507241, guid: b9fa264067d3c8c4d962ff10a67a3baf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: -0.014
       objectReference: {fileID: 0}
     - target: {fileID: 9061969791976507241, guid: b9fa264067d3c8c4d962ff10a67a3baf, type: 3}
       propertyPath: m_LocalPosition.z
