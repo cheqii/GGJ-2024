@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Trap : MonoBehaviour
@@ -40,5 +41,6 @@ public class Trap : MonoBehaviour
     {
         Instantiate(TrapObject, transform.position, Quaternion.identity);
         Instantiate(AttackFx, transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }

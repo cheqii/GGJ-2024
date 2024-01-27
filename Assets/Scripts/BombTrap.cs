@@ -18,10 +18,18 @@ public class BombTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.GetComponent<PlayerMovement>() == null)
+        {
+            return;
+        }
+
+        playerMovement = col.GetComponent<PlayerMovement>();
+        spriteRenderer.enabled = false;
+
+        
         if (col.CompareTag("Player") && !isPlayerSlowed)
         {
             StartCoroutine(SlowPlayerSpeed());
-            spriteRenderer.enabled = false;
 
             // Bomb effect
             Instantiate(bombEffectPrefab, transform.position, Quaternion.identity);

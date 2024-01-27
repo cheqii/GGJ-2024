@@ -7,7 +7,8 @@ public class Weapon : MonoBehaviour
     public enum WeaponRange
     {
         melee,
-        long_range
+        long_range,
+        trap
     }
 
     public SpriteRenderer weaponRenderer;
@@ -31,6 +32,8 @@ public class Weapon : MonoBehaviour
     public GameObject AttackFx;
     public GameObject SecondAttackFx;
     public GameObject Bullet;
+    public GameObject Trap;
+
 
     // Serialized variable for customizable keycode
     [SerializeField]
@@ -66,6 +69,13 @@ public class Weapon : MonoBehaviour
                     var atk = Instantiate(AttackArea, Crosshair.transform.position, Quaternion.identity);
                     atk.GetComponent<DamageArea>().damageAmount = damage;
                     Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
+                    break;
+                
+                case WeaponRange.trap:
+                    var _trap = Instantiate(Trap, transform.position, Quaternion.identity);
+                    _trap.GetComponent<Trap>().targetPosition = Crosshair.transform.position;
+                    Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
+
                     break;
 
             }
