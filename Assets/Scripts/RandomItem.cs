@@ -31,7 +31,7 @@ public class RandomItem : MonoBehaviour
 
     private WeaponData selectedWeapon;
 
-    [SerializeField] private WeaponManager _weaponManager;
+    [SerializeField] public WeaponManager _weaponManager;
     
     private void Start()
     {
