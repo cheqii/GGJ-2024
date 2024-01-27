@@ -118,6 +118,27 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CheckPoint"))
+        {
+            if (!isBullying && playerIndex == 0)
+            {
+                GameManager.Instance.GetComponent<CheckPoint>().spawnCheck = false;
+                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer1Score(1);
+                Destroy(other.gameObject, 0.2f);
+                StartCoroutine(GameManager.Instance.GetComponent<CheckPoint>().RandomSpawnCheckPoint());
+            }
+            if (!isBullying && playerIndex == 1)
+            {
+                GameManager.Instance.GetComponent<CheckPoint>().spawnCheck = false;
+                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer2Score(1);
+                Destroy(other.gameObject, 0.2f);
+                StartCoroutine(GameManager.Instance.GetComponent<CheckPoint>().RandomSpawnCheckPoint());
+            }
+        }
+    }
+
     public void DeceaseHealth(float value)
     {
         Instantiate(Blood, transform.position, Quaternion.identity);
@@ -147,7 +168,7 @@ public class Player : MonoBehaviour
             float randomX = Random.Range(-spawnAreaWidth / 2, spawnAreaWidth / 2);
             float randomY = Random.Range(-spawnAreaHeight / 2, spawnAreaHeight / 2);
 
-            transform.position = new Vector3(randomX, randomY, 0f);
+            transform.position = new Vector3(randomX, randomY, 1f);
             isDead = false;
             currentHealth = maxHealth;
             
