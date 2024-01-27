@@ -2010,7 +2010,7 @@ PrefabInstance:
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: imageList.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: f7f8d39e1536eb04a96c7de0bddfa40f, type: 3}
+      objectReference: {fileID: 21300000, guid: c99e1e08d12a8b44c988b59e0d66a0fd, type: 3}
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: imageList.Array.data[1]
       value: 
