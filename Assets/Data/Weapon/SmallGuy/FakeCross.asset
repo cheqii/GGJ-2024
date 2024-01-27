@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FakeCross
   m_EditorClassIdentifier: 
   weaponName: FakeCross
-  weaponIcon: {fileID: 21300000, guid: 6f129c0838081aa41b0e8d7f426ea6a7, type: 3}
+  weaponIcon: {fileID: 21300000, guid: 47d1743c0d0ee81499da6312b63f4c37, type: 3}
   damage: 20
   WeaponType: 1
   WeaponSprite: {fileID: 21300000, guid: 6f129c0838081aa41b0e8d7f426ea6a7, type: 3}

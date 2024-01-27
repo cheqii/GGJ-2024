@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bacon
   m_EditorClassIdentifier: 
   weaponName: Bacon
-  weaponIcon: {fileID: 21300000, guid: 390a8d3ebe8ab8a42b25e215002a4d9c, type: 3}
+  weaponIcon: {fileID: 21300000, guid: f7f8d39e1536eb04a96c7de0bddfa40f, type: 3}
   damage: 10
   WeaponType: 1
   WeaponSprite: {fileID: 21300000, guid: 390a8d3ebe8ab8a42b25e215002a4d9c, type: 3}

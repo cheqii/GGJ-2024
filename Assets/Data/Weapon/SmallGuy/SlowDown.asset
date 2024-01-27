@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SlowDown
   m_EditorClassIdentifier: 
   weaponName: SlowDown
-  weaponIcon: {fileID: 21300000, guid: 9458a7276d850164e80ac766f8b6ab39, type: 3}
+  weaponIcon: {fileID: 21300000, guid: 98786e6e072f59640959a7e10b8d25f1, type: 3}
   damage: 5
   WeaponType: 0
   WeaponSprite: {fileID: 21300000, guid: 9458a7276d850164e80ac766f8b6ab39, type: 3}

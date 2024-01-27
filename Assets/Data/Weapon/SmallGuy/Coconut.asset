@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coconut
   m_EditorClassIdentifier: 
   weaponName: Coconut
-  weaponIcon: {fileID: 21300000, guid: 352e62402b4e0164fafea9e63b47a6d1, type: 3}
+  weaponIcon: {fileID: 21300000, guid: f4547756e89c1c948931ff66ce18e0bf, type: 3}
   damage: 10
   WeaponType: 1
   WeaponSprite: {fileID: 21300000, guid: 352e62402b4e0164fafea9e63b47a6d1, type: 3}
