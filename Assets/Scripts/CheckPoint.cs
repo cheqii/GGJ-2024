@@ -25,13 +25,6 @@ public class CheckPoint : MonoBehaviour
         StartCoroutine(RandomSpawnCheckPoint());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // StartCoroutine(RandomSpawnCheckPoint());
-        // RandomSpawnCheckPoint();
-    }
-
     public IEnumerator RandomSpawnCheckPoint()
     {
         yield return new WaitForSeconds(respawnDelay);
@@ -47,17 +40,5 @@ public class CheckPoint : MonoBehaviour
                 spawnCheck = true;
             }
         }
-
-
-        // GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        //
-        // foreach (var player in players)
-        // {
-        //     var checkState = player.GetComponent<Player>();
-        //     if (player != null && !checkState.IsBullying)
-        //     {
-        //         
-        //     }
-        // }
     }
 }
