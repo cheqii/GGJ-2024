@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba211df8e3375d4b8691e0692905aea, type: 3}
+  m_Name: SlowDown
+  m_EditorClassIdentifier: 
+  weaponName: SlowDown
+  weaponIcon: {fileID: 21300000, guid: 98786e6e072f59640959a7e10b8d25f1, type: 3}
+  damage: 5
+  WeaponType: 0
+  WeaponSprite: {fileID: 21300000, guid: 9458a7276d850164e80ac766f8b6ab39, type: 3}
+  BulletSprite: {fileID: 21300000, guid: 98786e6e072f59640959a7e10b8d25f1, type: 3}
+  Range: 5
+  WeaponCooldown: 2
+  WeaponRotation: 90

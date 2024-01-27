@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
     [SerializeField] private float respawnDelay;
 
     [SerializeField] private bool isDead;
+
+    public bool IsDead
+    {
+        get => isDead;
+        set => isDead = value;
+    }
     
     [Header("Bullying State")]
     [SerializeField] private bool isBullying;
@@ -114,6 +120,29 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("CheckPoint"))
+        {
+            var score = GameManager.Instance.GetComponent<ScoreCount>();
+            var checkPoint = GameManager.Instance.GetComponent<CheckPoint>();
+            if (!isBullying && playerIndex == 0)
+            {
+                checkPoint.spawnCheck = false;
+                score.IncreasePlayer1Score(1);
+                Destroy(other.gameObject, 0.2f);
+                StartCoroutine(checkPoint.RandomSpawnCheckPoint());
+            }
+            if (!isBullying && playerIndex == 1)
+            {
+                checkPoint.spawnCheck = false;
+                score.IncreasePlayer2Score(1);
+                Destroy(other.gameObject, 0.2f);
+                StartCoroutine(checkPoint.RandomSpawnCheckPoint());
+            }
+        }
+    }
+
     public void DeceaseHealth(float value)
     {
         Instantiate(Blood, transform.position, Quaternion.identity);
@@ -132,7 +161,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        transform.position = new Vector3(100f, 100f, 1f);
+        transform.position = new Vector3(1000f, 1000f, 1f);
     }
 
     IEnumerator RespawnPlayer()
@@ -143,7 +172,7 @@ public class Player : MonoBehaviour
             float randomX = Random.Range(-spawnAreaWidth / 2, spawnAreaWidth / 2);
             float randomY = Random.Range(-spawnAreaHeight / 2, spawnAreaHeight / 2);
 
-            transform.position = new Vector3(randomX, randomY, 0f);
+            transform.position = new Vector3(randomX, randomY, 1f);
             isDead = false;
             currentHealth = maxHealth;
             
