@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microlight.MicroBar;
@@ -23,18 +24,33 @@ public class TurnBasedManagement : MonoBehaviour
     
     [SerializeField] private Nf_GameEvent endRoundEvent;
 
+    [Header("Random Items")]
+    [SerializeField] private List<RandomItem> randomItems;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = turnTime;
         // playerList[1]._MicroBar.GetComponent<MicroBar>().Initialize(playerList[1].CurrentHealth);
-        Player1BullyTurn();
+        EndTurn();
+        try
+        {
+            Player1BullyTurn();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        if (!randomItems[0].IsMoving && !randomItems[0].IsMoving)
+        {
+            timer -= Time.deltaTime;
+            // StartCoroutine(RandomItems());
+        }
         
         if (timerText != null)
         {
@@ -47,7 +63,7 @@ public class TurnBasedManagement : MonoBehaviour
 
         if (timer <= 0)
         {
-            StartCoroutine(EndTurn());
+            EndTurn();
             StartTurn();
         }
     }
@@ -74,17 +90,25 @@ public class TurnBasedManagement : MonoBehaviour
         player1BullyTurn = !player1BullyTurn;
     }
 
-    IEnumerator EndTurn()
+    void EndTurn()
     {
         // End turn logic, if any
         // random new weapon
-        endRoundEvent.Raise();
-        yield return new WaitForSeconds(2f);
+        // endRoundEvent.Raise();
+        
+        // randomItems[0].transform.parent.parent.parent.gameObject.SetActive(true);
+        
+        randomItems[0].StartMoving();
+        randomItems[1].StartMoving();
     }
 
     void Player1BullyTurn()
     {
         Debug.Log("Player 1 bullying turn.");
+        
+        // randomItems[0].StartMoving();
+        // randomItems[1].StartMoving();
+        
         playerList[0].IsBullying = true;
         playerList[1].IsBullying = false; 
         
@@ -99,6 +123,10 @@ public class TurnBasedManagement : MonoBehaviour
     void Player2BullyTurn()
     {
         Debug.Log("Player 2 bullying turn.");
+        
+        // randomItems[0].StartMoving();
+        // randomItems[1].StartMoving();
+        
         playerList[1].IsBullying = true;
         playerList[0].IsBullying = false;
         
@@ -107,6 +135,11 @@ public class TurnBasedManagement : MonoBehaviour
        
         playerList[0].CurrentHealth = playerList[0].MaxHealth;
         playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
+    }
 
+    IEnumerator RandomItems()
+    {
+        yield return new WaitForSeconds(0.2f);
+        randomItems[0].transform.parent.parent.parent.gameObject.SetActive(false);
     }
 }

@@ -23,13 +23,18 @@ public class RandomItem : MonoBehaviour
     private RectTransform rectTransform;
     private bool isMoving = false; // Flag to check if the movement should start
 
+    public bool IsMoving
+    {
+        get => isMoving;
+        set => isMoving = value;
+    }
+
     private WeaponData selectedWeapon;
 
     [SerializeField] private WeaponManager _weaponManager;
     
     private void Start()
     {
-        
         rectTransform = GetComponent<RectTransform>();
         weaponNameText.text = "";
     }
