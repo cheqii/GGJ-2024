@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 9149318144796973263}
   smoothSpeed: 5
-  maxDistance: 5
+  maxDistance: 2
   hideThreshold: 0.5
 --- !u!58 &250271289
 CircleCollider2D:
@@ -994,6 +994,7 @@ MonoBehaviour:
   weaponRenderer: {fileID: 0}
   rotationSpeed: 45
   rotationBackSpeed: 30
+  damage: 0
   desiredRotationAngle: 90
   delayBetweenRotations: 1
   PlayerSprite: {fileID: 0}
@@ -1003,6 +1004,7 @@ MonoBehaviour:
   AttackFx: {fileID: 0}
   SecondAttackFx: {fileID: 0}
   Bullet: {fileID: 0}
+  Trap: {fileID: 0}
   rotationKeyCode: 32
 --- !u!4 &944972385
 Transform:
@@ -1197,7 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1299653215747472503}
   smoothSpeed: 5
-  maxDistance: 5
+  maxDistance: 4
   hideThreshold: 0.5
 --- !u!50 &1382851895
 Rigidbody2D:
@@ -1972,12 +1974,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
+      propertyPath: AttackFx
+      value: 
+      objectReference: {fileID: 1120055816206956320, guid: c58cc369abed6dc4d96e947abb481bc9, type: 3}
+    - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 250271286}
     - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
+      propertyPath: AttackArea
+      value: 
+      objectReference: {fileID: 19238558659213989, guid: c9d717634db07d545b9cdcf2d611f310, type: 3}
+    - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
       propertyPath: rotationKeyCode
       value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051479804010348515, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
+      propertyPath: desiredRotationAngle
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259611725474074320, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
+      propertyPath: dashKey
+      value: 258
       objectReference: {fileID: 0}
     - target: {fileID: 7842163936940956168, guid: 5e1f80aad9733fb49bfa27ed1e3a1959, type: 3}
       propertyPath: Crosshair
@@ -2004,6 +2026,22 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 1382851891}
+    - target: {fileID: 2457751001480810971, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
+      propertyPath: testData
+      value: 
+      objectReference: {fileID: 11400000, guid: 02d55cad811898f4aa4f55615b9a8f63, type: 2}
+    - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
+      propertyPath: Trap
+      value: 
+      objectReference: {fileID: 6396086079860008129, guid: aec442d686f752743b69274c9078baf2, type: 3}
+    - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
+      propertyPath: AttackFx
+      value: 
+      objectReference: {fileID: 1120055816206956320, guid: c58cc369abed6dc4d96e947abb481bc9, type: 3}
     - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
       propertyPath: Crosshair
       value: 
@@ -2015,7 +2053,7 @@ PrefabInstance:
     - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
       propertyPath: SecondAttackFx
       value: 
-      objectReference: {fileID: 4293212646710098275, guid: 80878ab3bbfe1ff4583084b22a452c19, type: 3}
+      objectReference: {fileID: 875009153339430554, guid: cf7044e776ed03f4aa23e6a4093fe656, type: 3}
     - target: {fileID: 4309534630280906225, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
       propertyPath: m_IsActive
       value: 0

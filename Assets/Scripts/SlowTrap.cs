@@ -22,6 +22,15 @@ public class SlowTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.GetComponent<PlayerMovement>() == null)
+        {
+            return;
+        }
+
+        playerMovement = col.GetComponent<PlayerMovement>();
+        spriteRenderer.enabled = false;
+
+        
         if (col.CompareTag("Player") && !isPlayerSlowed)
         {
             // Player trap animation

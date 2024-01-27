@@ -23,6 +23,16 @@ public class RandomItem : MonoBehaviour
     private RectTransform rectTransform;
     private bool isMoving = false; // Flag to check if the movement should start
 
+    public bool IsMoving
+    {
+        get => isMoving;
+        set => isMoving = value;
+    }
+
+    private WeaponData selectedWeapon;
+
+    [SerializeField] private WeaponManager _weaponManager;
+    
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -72,12 +82,14 @@ public class RandomItem : MonoBehaviour
                 Debug.Log("Source image name: " + spriteName);
 
                 // Check if spriteName matches any WeaponData.weaponIcon.name
-                WeaponData selectedWeapon = weapons.Find(weapon => weapon.weaponIcon.name == spriteName);
+                selectedWeapon = weapons.Find(weapon => weapon.weaponIcon.name == spriteName);
                 if (selectedWeapon != null)
                 {
                     // Get data from WeaponData
                     Debug.Log("Weapon name: " + selectedWeapon.weaponName);
                     weaponNameText.text = selectedWeapon.weaponName;
+                    
+                    _weaponManager.SetWeapon(selectedWeapon);
                 }
 
                 currentRound = 0; // Reset currentRound for the next iteration
@@ -109,6 +121,12 @@ public class RandomItem : MonoBehaviour
                 ChangeImage();
             }
         }
+
+        // if (currentRound == 0)
+        // {
+        //     print("already random false = random again");
+        //     alreadyRandom = false;
+        // }
     }
 
     private void ChangeImage()

@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    [SerializeField] private Sprite statusSprite;
+    private Player player;
     
+    [SerializeField] private Sprite statusSprite;
     [SerializeField] private GameObject statusGo;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -20,13 +21,13 @@ public class PlayerStatus : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
-            AttachStatus();
+            AttachStatus(player._StatusData);
         }
     }
 
-    public void AttachStatus()
+    public void AttachStatus(StatusData data)
     {
-        statusGo.GetComponent<SpriteRenderer>().sprite = statusSprite;
+        statusGo.GetComponent<SpriteRenderer>().sprite = data.statusSprite;
         var status = Instantiate(statusGo, transform.position, quaternion.identity, transform);
         Destroy(status, 1f);
     }
