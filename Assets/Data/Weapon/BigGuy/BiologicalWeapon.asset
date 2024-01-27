@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba211df8e3375d4b8691e0692905aea, type: 3}
   m_Name: BiologicalWeapon
   m_EditorClassIdentifier: 
-  weaponName: BiologicalWeapon
+  weaponName: Biological Weapon
   weaponIcon: {fileID: 21300000, guid: e281e059babf94c4b92b359d3af9bb79, type: 3}
   damage: 10
   WeaponType: 0

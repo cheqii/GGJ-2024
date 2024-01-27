@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba211df8e3375d4b8691e0692905aea, type: 3}
   m_Name: 10YJammerSword
   m_EditorClassIdentifier: 
-  weaponName: 10YJammerSword
+  weaponName: 10Y Jammer Sword
   weaponIcon: {fileID: 21300000, guid: 3419ac28a24ee72469e3e1ee899e102e, type: 3}
   damage: 10
   WeaponType: 0
