@@ -8,6 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
+    #region -Declared Variables-
+
     public int playerIndex;
 
     [SerializeField] private GameObject playerPrefab;
@@ -51,6 +53,26 @@ public class Player : MonoBehaviour
         get => isBullying;
         set => isBullying = value;
     }
+
+    [Header("Status Data")]
+    [SerializeField] private bool triggerStatus;
+
+    public bool TriggerStatus
+    {
+        get => triggerStatus;
+        set => triggerStatus = value;
+    }
+
+    [SerializeField] private StatusData _statusData;
+
+    public StatusData _StatusData
+    {
+        get => _statusData;
+        set => _statusData = value;
+    }
+
+    #endregion
+
     void Start()
     {
         _microBar = GetComponentInChildren<MicroBar>();

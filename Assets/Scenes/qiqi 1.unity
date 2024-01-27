@@ -1262,6 +1262,10 @@ PrefabInstance:
       propertyPath: _barType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5322293083861485139, guid: 7bb539bc9d0feb34682041fea55066a3, type: 3}
+      propertyPath: _statusData
+      value: 
+      objectReference: {fileID: 11400000, guid: 44c5ea0a0b8518f4ab5502477c411f5b, type: 2}
     - target: {fileID: 5530708097121085939, guid: 7bb539bc9d0feb34682041fea55066a3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1290,6 +1294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4255091520757887877, guid: 44573bb404952a4498c56ccb4d2a0272, type: 3}
+      propertyPath: _statusData
+      value: 
+      objectReference: {fileID: 11400000, guid: b88aa0d057fa4b04985fd314f350fafa, type: 2}
     - target: {fileID: 5785677668420481572, guid: 44573bb404952a4498c56ccb4d2a0272, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.26
