@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     public Vector3 targetPosition;
     public float curveSpeed = 1f;
     public float arrivalThreshold = 0.1f;
-    
+    public int damage = 0;
     public GameObject AttackArea;
     public GameObject AttackFx;
     
@@ -38,7 +38,8 @@ public class Bullet : MonoBehaviour
 
     void Reach()
     {
-        Instantiate(AttackArea, transform.position, Quaternion.identity);
+        var atk = Instantiate(AttackArea, transform.position, Quaternion.identity);
+        atk.GetComponent<DamageArea>().damageAmount = damage;
         Instantiate(AttackFx, transform.position, Quaternion.identity);
 
     }

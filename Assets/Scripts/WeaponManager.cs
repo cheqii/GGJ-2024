@@ -27,7 +27,8 @@ public class WeaponManager : MonoBehaviour
                 (weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
                     weaponData.Range,
-                    weaponData.WeaponRotation
+                    weaponData.WeaponRotation,
+                    weaponData.damage
                 );
                 break;
             case Weapon.WeaponRange.melee:
@@ -35,7 +36,9 @@ public class WeaponManager : MonoBehaviour
                     (weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
                     weaponData.Range,
-                    weaponData.WeaponRotation
+                    weaponData.WeaponRotation,
+                weaponData.damage
+
                         );
                 
                 break;
