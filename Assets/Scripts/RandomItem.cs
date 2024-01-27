@@ -31,6 +31,14 @@ public class RandomItem : MonoBehaviour
         set => selectedWeapon = value;
     }
 
+    [SerializeField] private bool alreadyRandom;
+
+    public bool AlreadyRandom
+    {
+        get => alreadyRandom;
+        set => alreadyRandom = value;
+    }
+
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -86,6 +94,7 @@ public class RandomItem : MonoBehaviour
                     // Get data from WeaponData
                     Debug.Log("Weapon name: " + selectedWeapon.weaponName);
                     weaponNameText.text = selectedWeapon.weaponName;
+                    alreadyRandom = true;
                 }
 
                 currentRound = 0; // Reset currentRound for the next iteration
@@ -116,6 +125,12 @@ public class RandomItem : MonoBehaviour
             {
                 ChangeImage();
             }
+        }
+
+        if (currentRound == 0)
+        {
+            print("already random false = random again");
+            alreadyRandom = false;
         }
     }
 

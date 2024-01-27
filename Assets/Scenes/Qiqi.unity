@@ -1270,6 +1270,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: RandomWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: imageList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8017337eeebe94e4eab8f0983c24a7f6, type: 2}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: imageList.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a7cdad8933ad6c4680c718cbdbdde14, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2761,6 +2781,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5657209265055220264, guid: c7d512b41db79d44485049da2af95af0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6287528677018288522, guid: c7d512b41db79d44485049da2af95af0, type: 3}
       propertyPath: managedReferences[7806838824534016014].PlayEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2773,6 +2797,10 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 1382851891}
+    - target: {fileID: 6557024486146136493, guid: c7d512b41db79d44485049da2af95af0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

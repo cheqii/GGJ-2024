@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,21 @@ public class WeaponManager : MonoBehaviour
     [Header("**for debug only**")]
     [SerializeField] private WeaponData testData;
 
+    [SerializeField] private RandomItem randomItem;
 
+
+    private void Start()
+    {
+        randomItem = FindObjectOfType<RandomItem>();
+    }
+
+    private void Update()
+    {
+        if (randomItem.AlreadyRandom)
+        {
+            SetWeapon(randomItem.SelectedWeapon);
+        }
+    }
 
     public void SetWeaponTest()
     {
