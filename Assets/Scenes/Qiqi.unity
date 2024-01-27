@@ -1107,12 +1107,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: turnTime
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 15382330}
+    - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
+      propertyPath: randomItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: playerList.Array.data[0]
       value: 
@@ -1121,6 +1125,14 @@ PrefabInstance:
       propertyPath: playerList.Array.data[1]
       value: 
       objectReference: {fileID: 9128940460886120294}
+    - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
+      propertyPath: randomItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 1471226696}
+    - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
+      propertyPath: randomItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 1354059130}
     - target: {fileID: 2002081916377761089, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: player1ScoreText
       value: 
@@ -1750,6 +1762,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1057146683878822041, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
   m_PrefabInstance: {fileID: 792503916}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354059130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+  m_PrefabInstance: {fileID: 1642201337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2ae6e37748fb74cb52b23e47e52b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382851891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2407,17 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
+--- !u!114 &1471226696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+  m_PrefabInstance: {fileID: 792503916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2ae6e37748fb74cb52b23e47e52b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1524092283
 GameObject:
   m_ObjectHideFlags: 0
