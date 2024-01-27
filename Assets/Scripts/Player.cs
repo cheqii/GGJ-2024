@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microlight.MicroBar;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
     public int playerIndex;
+
+    [SerializeField] private GameObject playerPrefab;
     
+    [Header("Player Health")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
+
+    [Header("Micro Bar")]
+    [SerializeField] private MicroBar _microBar;
     
+    [Header("Random SpawnArea")]
     [SerializeField] private float spawnAreaWidth = 10f;
     [SerializeField] private float spawnAreaHeight = 5f;
 
-    [SerializeField] private float respawnDelay = 2f;
+    [SerializeField] private float respawnDelay;
 
     [SerializeField] private bool isDead;
     
@@ -26,7 +37,9 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
+        _microBar = GetComponentInChildren<MicroBar>();
         currentHealth = maxHealth;
+        _microBar.Initialize(currentHealth);
     }
     
     void Update()
@@ -34,17 +47,41 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0 && !isBullying)
         {
             isDead = true;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            Die();
             StartCoroutine(RespawnPlayer());
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)) DeceaseHealth(10);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DeceaseHealth(10);
+        }
     }
 
     public void DeceaseHealth(float value)
     {
-        if (currentHealth > 0 && !isBullying) currentHealth -= value;
-        if (currentHealth <= 0 && !isBullying) {currentHealth = 0;}
+        if (currentHealth > 0 && !isBullying)
+        {
+            currentHealth -= value;
+            _microBar.UpdateHealthBar(currentHealth);
+        }
+
+        if (currentHealth <= 0 && !isBullying)
+        {
+            currentHealth = 0;
+        }
+    }
+
+    void Die()
+    {
+        try
+        {
+            var child = transform.GetChild(0).gameObject;
+            Destroy(child);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 
     IEnumerator RespawnPlayer()
@@ -58,8 +95,10 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(randomX, randomY, 0f);
             isDead = false;
             currentHealth = maxHealth;
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
             
+            Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
+            _microBar = GetComponentInChildren<MicroBar>();
+            _microBar.Initialize(currentHealth);
             if (playerIndex == 1 && !isBullying) // if player1 is bullying then player 1 will get score by bully player 2
             {
                 print($"Player 1 get score");
