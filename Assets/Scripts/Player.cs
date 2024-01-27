@@ -14,10 +14,26 @@ public class Player : MonoBehaviour
     
     [Header("Player Health")]
     [SerializeField] private float maxHealth;
+    public float MaxHealth
+    {
+        get => maxHealth;
+        set => maxHealth = value;
+    }
+    
     [SerializeField] private float currentHealth;
+    public float CurrentHealth
+    {
+        get => currentHealth;
+        set => currentHealth = value;
+    }
 
     [Header("Micro Bar")]
     [SerializeField] private MicroBar _microBar;
+    public MicroBar _MicroBar
+    {
+        get => _microBar;
+        set => _microBar = value;
+    }
     
     [Header("Random SpawnArea")]
     [SerializeField] private float spawnAreaWidth = 10f;
@@ -44,6 +60,16 @@ public class Player : MonoBehaviour
     
     void Update()
     {
+        if(_microBar == null) return;
+        if (isBullying)
+        {
+            _microBar.gameObject.SetActive(false);
+        }
+        else
+        {
+            _microBar.gameObject.SetActive(true);
+        }
+        
         if (currentHealth <= 0 && !isBullying)
         {
             isDead = true;
@@ -97,8 +123,11 @@ public class Player : MonoBehaviour
             currentHealth = maxHealth;
             
             Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
+            
+            // find new micro bar assign it!
             _microBar = GetComponentInChildren<MicroBar>();
             _microBar.Initialize(currentHealth);
+            
             if (playerIndex == 1 && !isBullying) // if player1 is bullying then player 1 will get score by bully player 2
             {
                 print($"Player 1 get score");
