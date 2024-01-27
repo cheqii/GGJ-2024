@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microlight.MicroBar;
+using MoreMountains.Feedbacks;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -80,6 +81,10 @@ public class Player : MonoBehaviour
         set => _statusData = value;
     }
 
+
+    public GameObject Blood;
+    public MMF_Player ShakeFeedback;
+
     #endregion
 
     void Start()
@@ -107,11 +112,12 @@ public class Player : MonoBehaviour
             Die();
             StartCoroutine(RespawnPlayer());
         }
-        
     }
 
     public void DeceaseHealth(float value)
     {
+        Instantiate(Blood, transform.position, Quaternion.identity);
+        ShakeFeedback.PlayFeedbacks();
         if (currentHealth > 0 && !isBullying)
         {
             currentHealth -= value;
@@ -126,15 +132,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        try
-        {
-            var child = transform.GetChild(0).gameObject;
-            Destroy(child);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        transform.position = new Vector3(100f, 100f, 1f);
     }
 
     IEnumerator RespawnPlayer()
@@ -149,7 +147,7 @@ public class Player : MonoBehaviour
             isDead = false;
             currentHealth = maxHealth;
             
-            Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
+            // Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
             
             // find new micro bar assign it!
             _microBar = GetComponentInChildren<MicroBar>();

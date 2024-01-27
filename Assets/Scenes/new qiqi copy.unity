@@ -1953,9 +1953,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3611919506923411652, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
     - target: {fileID: 5846496429178697957, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889476107944198223, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6465040301752330760, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_fontSize
@@ -3641,6 +3649,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3611919506923411652, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
     - target: {fileID: 5846496429178697957, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4436,6 +4448,8 @@ MonoBehaviour:
   _PlayerType: 1
   triggerStatus: 0
   _statusData: {fileID: 11400000, guid: b88aa0d057fa4b04985fd314f350fafa, type: 2}
+  Blood: {fileID: 0}
+  ShakeFeedback: {fileID: 0}
 --- !u!114 &4204103056742057332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4660,6 +4674,8 @@ MonoBehaviour:
   _PlayerType: 0
   triggerStatus: 0
   _statusData: {fileID: 11400000, guid: 44c5ea0a0b8518f4ab5502477c411f5b, type: 2}
+  Blood: {fileID: 0}
+  ShakeFeedback: {fileID: 0}
 --- !u!114 &9128940460886120295
 MonoBehaviour:
   m_ObjectHideFlags: 0

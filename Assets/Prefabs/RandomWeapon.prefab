@@ -239,8 +239,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Weapon Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3944eaaf70beffa4097d8c293604125e, type: 2}
+  m_sharedMaterial: {fileID: 7159369417392969216, guid: 3944eaaf70beffa4097d8c293604125e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -396,16 +396,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
-  - {fileID: 11400000, guid: 02d55cad811898f4aa4f55615b9a8f63, type: 2}
+  - {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
+  - {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
   imageList:
-  - {fileID: 21300000, guid: faf7be15e2ac88045a59f9a919d4dc57, type: 3}
-  - {fileID: 21300000, guid: d6bc3380d58cf5a4191adeb11cdfd319, type: 3}
+  - {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
+  - {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
+  - {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
   weaponNameText: {fileID: 6465040301752330760}
   initialSpeed: 1000
   acceleration: 10
   easeInOutDuration: 1
   totalRounds: 20
   currentRound: 0
+  _weaponManager: {fileID: 0}
 --- !u!1 &5846496429178697957
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2527846936727851365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -606,8 +609,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c5cf9a8f3f87384f9c8cfa9c6dcefac, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: af8dfead9fb049f47ace154a3244140a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -615,7 +618,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 15
 --- !u!114 &8311385597385966799
 MonoBehaviour:
   m_ObjectHideFlags: 0
