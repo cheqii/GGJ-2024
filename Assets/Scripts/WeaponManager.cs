@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -23,6 +24,9 @@ public class WeaponManager : MonoBehaviour
         switch (weaponData.WeaponType)
         {
             case Weapon.WeaponRange.long_range:
+                longRange.transform.GameObject().SetActive(true);
+                melee.transform.GameObject().SetActive(false);
+
                 longRange.SetWeaponRenderer
                 (weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
@@ -32,6 +36,9 @@ public class WeaponManager : MonoBehaviour
                 );
                 break;
             case Weapon.WeaponRange.melee:
+                longRange.transform.GameObject().SetActive(false);
+                melee.transform.GameObject().SetActive(true);
+                
                 melee.SetWeaponRenderer
                     (weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
