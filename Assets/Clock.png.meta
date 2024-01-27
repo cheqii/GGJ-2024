@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprite/Small/FakeCross_Bullet.png.meta
-guid: 47d1743c0d0ee81499da6312b63f4c37
-========
-guid: 4f39a6cf5fb1d6f4f88949fec92092d2
->>>>>>>> origin/Guitar:Assets/Arrow.png.meta
+guid: cd2f3caf7e0adc041af0f9aa282e8ca8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -52,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
