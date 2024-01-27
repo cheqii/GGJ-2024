@@ -1705,8 +1705,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1351958294}
   - {fileID: 1642201338}
+  - {fileID: 1351958294}
   m_Father: {fileID: 1524092287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2398,16 +2398,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_Name
-      value: BlueRandom
+      value: RedRandom
       objectReference: {fileID: 0}
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: _weaponManager
       value: 
       objectReference: {fileID: 8419721172540110417}
-    - target: {fileID: 8311385597385966799, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
-      propertyPath: m_ShowMaskGraphic
-      value: 1
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: imageList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: imageList.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
+    - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: imageList.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5797,7 +5817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_Name
-      value: RedRandom
+      value: BlueRandom
       objectReference: {fileID: 0}
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: _weaponManager
