@@ -80,6 +80,9 @@ public class Player : MonoBehaviour
         set => _statusData = value;
     }
 
+
+    public GameObject Blood;
+
     #endregion
 
     void Start()
@@ -111,6 +114,8 @@ public class Player : MonoBehaviour
 
     public void DeceaseHealth(float value)
     {
+        Instantiate(Blood, transform.position, Quaternion.identity);
+        
         if (currentHealth > 0 && !isBullying)
         {
             currentHealth -= value;
