@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ba211df8e3375d4b8691e0692905aea, type: 3}
-  m_Name: Banana
+  m_Name: FakeCross
   m_EditorClassIdentifier: 
-  weaponName: Banana
-  weaponIcon: {fileID: 21300000, guid: acccfe09c54bf6e4d9d631f49b91f466, type: 3}
-  damage: 10
+  weaponName: FakeCross
+  weaponIcon: {fileID: 21300000, guid: 47d1743c0d0ee81499da6312b63f4c37, type: 3}
+  damage: 20
   WeaponType: 1
-  WeaponSprite: {fileID: 21300000, guid: 0514c3d79db8c93438762040d1039a30, type: 3}
-  BulletSprite: {fileID: 21300000, guid: acccfe09c54bf6e4d9d631f49b91f466, type: 3}
-  Range: 3
-  WeaponCooldown: 1
+  WeaponSprite: {fileID: 21300000, guid: 6f129c0838081aa41b0e8d7f426ea6a7, type: 3}
+  BulletSprite: {fileID: 21300000, guid: 47d1743c0d0ee81499da6312b63f4c37, type: 3}
+  Range: 4
+  WeaponCooldown: 2
   WeaponRotation: 90

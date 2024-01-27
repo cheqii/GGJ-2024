@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1722466287259049468}
   - component: {fileID: 2002081916377761089}
   - component: {fileID: 1173847371504922303}
+  - component: {fileID: 5224417165346897547}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,13 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
-  turnTime: 5
+  turnTime: 10
   timer: 0
   player1BullyTurn: 1
   playerList:
   - {fileID: 0}
   - {fileID: 0}
   endRoundEvent: {fileID: 11400000, guid: 9fb14caf13d4172499d28c760c23790f, type: 2}
+  feedback: {fileID: 0}
 --- !u!114 &2002081916377761089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,8 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b34c8e5587c3046968b74750e85f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayerScore: 0
   player1ScoreText: {fileID: 0}
   player2ScoreText: {fileID: 0}
+  winLoseFeedback: {fileID: 0}
+  playerWinner: 0
 --- !u!114 &1173847371504922303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +87,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Score: 0
   player2Score: 0
+--- !u!114 &5224417165346897547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109718607284043464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb4ece3ee7cbec4e905b7caba1174bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotA: {fileID: 0}
+  slotB: {fileID: 0}
+  randomItemA: {fileID: 0}
+  randomItemB: {fileID: 0}
