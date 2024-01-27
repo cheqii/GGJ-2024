@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,8 +12,6 @@ public class WeaponManager : MonoBehaviour
 
     [Header("**for debug only**")]
     [SerializeField] private WeaponData testData;
-
-
 
     public void SetWeaponTest()
     {
@@ -31,7 +30,8 @@ public class WeaponManager : MonoBehaviour
 
                 
                 longRange.SetWeaponRenderer
-                (weaponData.WeaponSprite,
+                (
+                    weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,

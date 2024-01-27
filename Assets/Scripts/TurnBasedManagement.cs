@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microlight.MicroBar;
 using TMPro;
 using UnityEngine;
 
@@ -26,6 +27,7 @@ public class TurnBasedManagement : MonoBehaviour
     void Start()
     {
         timer = turnTime;
+        // playerList[1]._MicroBar.GetComponent<MicroBar>().Initialize(playerList[1].CurrentHealth);
         Player1BullyTurn();
     }
 
@@ -89,14 +91,9 @@ public class TurnBasedManagement : MonoBehaviour
         playerList[0].GetComponent<Transform>().localScale = new Vector3(5f, 5f, 1f);
         playerList[1].GetComponent<Transform>().localScale = new Vector3(3.5f, 3.5f, 1f);
        
-        // playerList[0].CurrentHealth = playerList[0].MaxHealth;
-        // playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
+        
         playerList[1].CurrentHealth = playerList[1].MaxHealth;
         playerList[1]._MicroBar.UpdateHealthBar(playerList[1].CurrentHealth);
-        // playerList[0]._MicroBar.gameObject.SetActive(false);
-        // playerList[1].CurrentHealth = playerList[1].MaxHealth;
-        // playerList[1]._MicroBar.gameObject.SetActive(true);
-        // Add your logic for method B here
     }
 
     void Player2BullyTurn()
@@ -110,8 +107,6 @@ public class TurnBasedManagement : MonoBehaviour
        
         playerList[0].CurrentHealth = playerList[0].MaxHealth;
         playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
-        // playerList[1].CurrentHealth = playerList[1].MaxHealth;
-        // playerList[1]._MicroBar.UpdateHealthBar(playerList[1].CurrentHealth);
-        
+
     }
 }
