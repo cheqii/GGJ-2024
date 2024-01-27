@@ -4,7 +4,7 @@ public class BgBounds : MonoBehaviour
 {
     private void LateUpdate()
     {
-        ConstrainPlayersToBounds();
+        // ConstrainPlayersToBounds();
     }
 
     private void ConstrainPlayersToBounds()
