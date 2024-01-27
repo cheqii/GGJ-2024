@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public enum PlayerType
+    {
+        RedPlayer,
+        BluePlayer
+    }
+
+    
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     
@@ -16,6 +23,8 @@ public class Player : MonoBehaviour
     
     [Header("Bullying State")]
     [SerializeField] private bool isBullying;
+
+    public PlayerType _PlayerType;
 
     public bool IsBullying
     {

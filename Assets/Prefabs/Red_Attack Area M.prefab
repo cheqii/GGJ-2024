@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1184748962589448199}
   - component: {fileID: 4434968291105880505}
   m_Layer: 0
-  m_Name: Attack Area M
+  m_Name: Red_Attack Area M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
+  Target: 1
 --- !u!61 &1184748962589448199
 BoxCollider2D:
   m_ObjectHideFlags: 0

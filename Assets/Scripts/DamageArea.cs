@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class DamageArea : MonoBehaviour
 {
+
     private bool damageApplied = false;
     private float damageDelay = 0.1f; // Set the delay time in seconds
     public int damageAmount = 10;
+    public Player.PlayerType Target;
+    
+    
 
     private void Start()
     {
@@ -17,16 +21,26 @@ public class DamageArea : MonoBehaviour
     {
         Debug.Log("Entered trigger area");
         
-        if (!damageApplied && other.CompareTag("Player"))
+        if (!damageApplied && other.CompareTag("Player") )
         {
-            // Check if the collided object is the player
-            PlayerHealth player = other.GetComponent<PlayerHealth>();
-
-            if (player != null)
+            if (other.GetComponent<Player>() != null)
             {
-                // Start a coroutine to apply damage with a delay
-                StartCoroutine(ApplyDamageWithDelay(player));
+                if (other.GetComponent<Player>()._PlayerType != Target)
+                {
+                    return;
+                }
+                
+                
+                // Check if the collided object is the player
+                PlayerHealth player = other.GetComponent<PlayerHealth>();
+
+                if (player != null)
+                {
+                    // Start a coroutine to apply damage with a delay
+                    StartCoroutine(ApplyDamageWithDelay(player));
+                }
             }
+         
         }
     }
 

@@ -168,12 +168,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5293151c2f79f6243af907e2c40b1202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 45
-  rotationBackSpeed: 30
+  rotationSpeed: 1000
+  rotationBackSpeed: 500
   desiredRotationAngle: 90
   delayBetweenRotations: 1
   PlayerSprite: {fileID: 4212842458880445900}
-  Crosshair_feedback: {fileID: 1382851898}
+  AttackArea: {fileID: 5664461070077914191, guid: 02a8bd4da1a5a6d4b8b4b668ea176643, type: 3}
+  Crosshair: {fileID: 1382851891}
   rotationKeyCode: 32
 --- !u!1 &391186620
 GameObject:
@@ -503,7 +504,8 @@ MonoBehaviour:
   desiredRotationAngle: 90
   delayBetweenRotations: 1
   PlayerSprite: {fileID: 0}
-  Crosshair_feedback: {fileID: 0}
+  AttackArea: {fileID: 0}
+  Crosshair: {fileID: 0}
   rotationKeyCode: 32
 --- !u!4 &944972385
 Transform:
@@ -698,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7506690702678378718}
   smoothSpeed: 5
-  maxDistance: 2
+  maxDistance: 3
   hideThreshold: 0.5
 --- !u!50 &1382851895
 Rigidbody2D:
