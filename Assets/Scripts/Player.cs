@@ -85,11 +85,7 @@ public class Player : MonoBehaviour
             Die();
             StartCoroutine(RespawnPlayer());
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DeceaseHealth(10);
-        }
+        
     }
 
     public void DeceaseHealth(float value)

@@ -28,14 +28,22 @@ public class DamageArea : MonoBehaviour
 
                 if (player != null)
                 {
+                    //Debug.Log(player._PlayerType + " | " + Target);
+                    
+                    
+                    if (player._PlayerType != Target)
+                    {
+                        return;
+                    }   
+                    
                     // Start a coroutine to apply damage with a delay
                     StartCoroutine(ApplyDamageWithDelay(player));
                 }
-            }
-         
         }
+         
     }
-
+    
+    
     void OnTriggerExit2D(Collider2D other)
     {
         
@@ -51,6 +59,8 @@ public class DamageArea : MonoBehaviour
     // Coroutine to apply damage to the player with a delay
     IEnumerator ApplyDamageWithDelay(Player player)
     {
+             
+        
         // Set damageApplied to true to avoid applying damage again during the delay
         damageApplied = true;
 
