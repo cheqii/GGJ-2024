@@ -1043,14 +1043,18 @@ MonoBehaviour:
   weaponRenderer: {fileID: 5657209265055220264}
   rotationSpeed: 1000
   rotationBackSpeed: 500
+  damage: 0
   desiredRotationAngle: 90
   delayBetweenRotations: 0.1
   PlayerSprite: {fileID: 4199506804337044076}
   AttackArea: {fileID: 19238558659213989, guid: e4acf2c26e0842d42af1b6faae2e968e, type: 3}
   Crosshair: {fileID: 0}
   _WeaponRange: 0
-  AttackFx: {fileID: 4293212646710098275, guid: 80878ab3bbfe1ff4583084b22a452c19, type: 3}
+  AttackFx: {fileID: 1120055816206956320, guid: c58cc369abed6dc4d96e947abb481bc9, type: 3}
+  SecondAttackFx: {fileID: 875009153339430554, guid: cf7044e776ed03f4aa23e6a4093fe656, type: 3}
   Bullet: {fileID: 2070678774258251384, guid: 7e25e5c018ac4574a9ff446a37389c1a, type: 3}
+  Trap: {fileID: 0}
+  bulletSprite: {fileID: 21300000, guid: 16a86a7f581fc4dfb953e0df8ad3ecac, type: 3}
   rotationKeyCode: 32
 --- !u!1 &2655047409283234975
 GameObject:
@@ -1209,8 +1213,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: faf7be15e2ac88045a59f9a919d4dc57, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1218,7 +1222,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6770872689181095517
@@ -1353,12 +1357,16 @@ MonoBehaviour:
   weaponRenderer: {fileID: 2007441707589280437}
   rotationSpeed: 1000
   rotationBackSpeed: 500
+  damage: 0
   desiredRotationAngle: 90
   delayBetweenRotations: 1
   PlayerSprite: {fileID: 4199506804337044076}
-  AttackArea: {fileID: 5664461070077914191, guid: 02a8bd4da1a5a6d4b8b4b668ea176643, type: 3}
+  AttackArea: {fileID: 5664461070077914191, guid: 60741abab27cadf41a8d6c6701eb0f7b, type: 3}
   Crosshair: {fileID: 0}
   _WeaponRange: 1
-  AttackFx: {fileID: 4293212646710098275, guid: 80878ab3bbfe1ff4583084b22a452c19, type: 3}
+  AttackFx: {fileID: 1120055816206956320, guid: c58cc369abed6dc4d96e947abb481bc9, type: 3}
+  SecondAttackFx: {fileID: 875009153339430554, guid: cf7044e776ed03f4aa23e6a4093fe656, type: 3}
   Bullet: {fileID: 2070678774258251384, guid: 7e25e5c018ac4574a9ff446a37389c1a, type: 3}
+  Trap: {fileID: 0}
+  bulletSprite: {fileID: 21300000, guid: 16a86a7f581fc4dfb953e0df8ad3ecac, type: 3}
   rotationKeyCode: 32

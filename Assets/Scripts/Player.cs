@@ -107,7 +107,6 @@ public class Player : MonoBehaviour
             Die();
             StartCoroutine(RespawnPlayer());
         }
-        
     }
 
     public void DeceaseHealth(float value)
@@ -126,15 +125,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        try
-        {
-            var child = transform.GetChild(0).gameObject;
-            Destroy(child);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        transform.position = new Vector3(100f, 100f, 1f);
     }
 
     IEnumerator RespawnPlayer()
@@ -149,7 +140,7 @@ public class Player : MonoBehaviour
             isDead = false;
             currentHealth = maxHealth;
             
-            Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
+            // Instantiate(playerPrefab, transform.position, quaternion.identity, transform);
             
             // find new micro bar assign it!
             _microBar = GetComponentInChildren<MicroBar>();
