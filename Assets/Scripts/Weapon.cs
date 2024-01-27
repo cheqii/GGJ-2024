@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
         melee,
         long_range
     }
+
+    public SpriteRenderer weaponRenderer;
     
     public float rotationSpeed = 45f;
     public float rotationBackSpeed = 30f;
@@ -18,9 +20,7 @@ public class Weapon : MonoBehaviour
     public float desiredRotationAngle = 90f;
     public float delayBetweenRotations = 1f;
     public Transform PlayerSprite;
-
     public GameObject AttackArea;
-
     public GameObject Crosshair;
 
     [Header("weapon Range")] public WeaponRange _WeaponRange;
@@ -97,5 +97,13 @@ public class Weapon : MonoBehaviour
         }
 
         isRotating = false;
+    }
+
+    public void SetWeaponRenderer(Sprite weaponSprite,int weaponCooldown,int range,int weaponRotation)
+    {
+        weaponRenderer.sprite = weaponSprite;
+        delayBetweenRotations = weaponCooldown;
+        desiredRotationAngle = weaponRotation;
+        Crosshair.GetComponent<Crosshair>().maxDistance = range;
     }
 }
