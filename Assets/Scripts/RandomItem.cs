@@ -23,10 +23,18 @@ public class RandomItem : MonoBehaviour
     private RectTransform rectTransform;
     private bool isMoving = false; // Flag to check if the movement should start
 
+    private WeaponData selectedWeapon;
+
+    public WeaponData SelectedWeapon
+    {
+        get => selectedWeapon;
+        set => selectedWeapon = value;
+    }
+
     private void Start()
     {
-        weaponNameText.text = "";
         rectTransform = GetComponent<RectTransform>();
+        weaponNameText.text = "";
     }
 
     private void Update()
@@ -35,7 +43,6 @@ public class RandomItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && currentRound < totalRounds && !isMoving)
         {
             StartMoving();
-            weaponNameText.text = "";
         }
 
         if (isMoving && currentRound < totalRounds)
@@ -49,6 +56,7 @@ public class RandomItem : MonoBehaviour
     {
         isMoving = true;
         StartCoroutine(MoveRoutine());
+        weaponNameText.text = "";
     }
 
     private void MoveImage()
@@ -72,7 +80,7 @@ public class RandomItem : MonoBehaviour
                 Debug.Log("Source image name: " + spriteName);
 
                 // Check if spriteName matches any WeaponData.weaponIcon.name
-                WeaponData selectedWeapon = weapons.Find(weapon => weapon.weaponIcon.name == spriteName);
+                selectedWeapon = weapons.Find(weapon => weapon.weaponIcon.name == spriteName);
                 if (selectedWeapon != null)
                 {
                     // Get data from WeaponData

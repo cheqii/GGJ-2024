@@ -8,6 +8,13 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
+    public enum PlayerType
+    {
+        RedPlayer,
+        BluePlayer
+    }
+
+    
     #region -Declared Variables-
 
     public int playerIndex;
@@ -47,6 +54,8 @@ public class Player : MonoBehaviour
     
     [Header("Bullying State")]
     [SerializeField] private bool isBullying;
+
+    public PlayerType _PlayerType;
 
     public bool IsBullying
     {
@@ -98,11 +107,7 @@ public class Player : MonoBehaviour
             Die();
             StartCoroutine(RespawnPlayer());
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DeceaseHealth(10);
-        }
+        
     }
 
     public void DeceaseHealth(float value)
