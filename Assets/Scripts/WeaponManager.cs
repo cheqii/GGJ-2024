@@ -23,15 +23,39 @@ public class WeaponManager : MonoBehaviour
                 longRange.transform.GameObject().SetActive(true);
                 melee.transform.GameObject().SetActive(false);
 
+                longRange._WeaponRange = Weapon.WeaponRange.long_range;
+
+                
                 longRange.SetWeaponRenderer
                 (
                     weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
-                    weaponData.damage
+                    weaponData.damage,
+                    weaponData.BulletSprite
+
                 );
                 break;
+            
+            case Weapon.WeaponRange.trap:
+                longRange.transform.GameObject().SetActive(true);
+                melee.transform.GameObject().SetActive(false);
+
+                longRange._WeaponRange = Weapon.WeaponRange.trap;
+                
+                longRange.SetWeaponRenderer
+                (weaponData.WeaponSprite,
+                    weaponData.WeaponCooldown,
+                    weaponData.Range,
+                    weaponData.WeaponRotation,
+                    weaponData.damage,
+                    weaponData.BulletSprite
+                );
+                
+                
+                break;
+            
             case Weapon.WeaponRange.melee:
                 longRange.transform.GameObject().SetActive(false);
                 melee.transform.GameObject().SetActive(true);
@@ -41,7 +65,9 @@ public class WeaponManager : MonoBehaviour
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
-                weaponData.damage
+                weaponData.damage,
+                    weaponData.BulletSprite
+
 
                         );
                 

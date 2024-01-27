@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ba211df8e3375d4b8691e0692905aea, type: 3}
-  m_Name: Rpg
+  m_Name: BombTrap
   m_EditorClassIdentifier: 
-  weaponName: Rpg
-  weaponIcon: {fileID: 21300000, guid: d6bc3380d58cf5a4191adeb11cdfd319, type: 3}
+  weaponName: BombTrap
+  weaponIcon: {fileID: 21300000, guid: 74e8ea830ef2e9d42991e64f6234b545, type: 3}
   damage: 0
-  WeaponType: 1
+  WeaponType: 2
   WeaponSprite: {fileID: 21300000, guid: d6bc3380d58cf5a4191adeb11cdfd319, type: 3}
-  BulletSprite: {fileID: 21300000, guid: 16a86a7f581fc4dfb953e0df8ad3ecac, type: 3}
-  Range: 4
-  WeaponCooldown: 1
+  BulletSprite: {fileID: 21300000, guid: 74e8ea830ef2e9d42991e64f6234b545, type: 3}
+  Range: 2
+  WeaponCooldown: 0
   WeaponRotation: 90

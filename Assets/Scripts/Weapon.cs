@@ -7,7 +7,8 @@ public class Weapon : MonoBehaviour
     public enum WeaponRange
     {
         melee,
-        long_range
+        long_range,
+        trap
     }
 
     public SpriteRenderer weaponRenderer;
@@ -31,6 +32,10 @@ public class Weapon : MonoBehaviour
     public GameObject AttackFx;
     public GameObject SecondAttackFx;
     public GameObject Bullet;
+    public GameObject Trap;
+
+    public Sprite bulletSprite;
+
 
     // Serialized variable for customizable keycode
     [SerializeField]
@@ -58,6 +63,7 @@ public class Weapon : MonoBehaviour
                     bullet.GetComponent<Bullet>().targetPosition = Crosshair.transform.position;
                     bullet.GetComponent<Bullet>().AttackFx = SecondAttackFx;
                     bullet.GetComponent<Bullet>().AttackArea = AttackArea;
+                    bullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 
 
                     break;
@@ -66,6 +72,15 @@ public class Weapon : MonoBehaviour
                     var atk = Instantiate(AttackArea, Crosshair.transform.position, Quaternion.identity);
                     atk.GetComponent<DamageArea>().damageAmount = damage;
                     Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
+                    break;
+                
+                case WeaponRange.trap:
+                    var _trap = Instantiate(Trap, transform.position, Quaternion.identity);
+                    _trap.GetComponent<Trap>().targetPosition = Crosshair.transform.position;
+                    Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
+                    _trap.GetComponent<SpriteRenderer>().sprite = bulletSprite;
+                    
+
                     break;
 
             }
@@ -105,12 +120,13 @@ public class Weapon : MonoBehaviour
         isRotating = false;
     }
 
-    public void SetWeaponRenderer(Sprite weaponSprite,int weaponCooldown,int range,int weaponRotation,int dmg)
+    public void SetWeaponRenderer(Sprite weaponSprite,int weaponCooldown,int range,int weaponRotation,int dmg,Sprite bullet)
     {
         weaponRenderer.sprite = weaponSprite;
         delayBetweenRotations = weaponCooldown;
         desiredRotationAngle = weaponRotation;
         Crosshair.GetComponent<Crosshair>().maxDistance = range;
         damage = dmg;
+        bulletSprite = bullet;
     }
 }
