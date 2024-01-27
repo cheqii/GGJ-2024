@@ -3743,7 +3743,7 @@ MonoBehaviour:
   _microBar: {fileID: 0}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 0
+  respawnDelay: 1
   isDead: 0
   isBullying: 0
   _PlayerType: 1
@@ -3967,7 +3967,7 @@ MonoBehaviour:
   _microBar: {fileID: 0}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 0
+  respawnDelay: 1
   isDead: 0
   isBullying: 0
   _PlayerType: 0
