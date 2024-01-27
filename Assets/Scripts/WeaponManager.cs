@@ -13,22 +13,6 @@ public class WeaponManager : MonoBehaviour
     [Header("**for debug only**")]
     [SerializeField] private WeaponData testData;
 
-    [SerializeField] private RandomItem randomItem;
-
-
-    private void Start()
-    {
-        randomItem = FindObjectOfType<RandomItem>();
-    }
-
-    private void Update()
-    {
-        if (randomItem.AlreadyRandom)
-        {
-            SetWeapon(randomItem.SelectedWeapon);
-        }
-    }
-
     public void SetWeaponTest()
     {
         SetWeapon(testData);
@@ -43,7 +27,8 @@ public class WeaponManager : MonoBehaviour
                 melee.transform.GameObject().SetActive(false);
 
                 longRange.SetWeaponRenderer
-                (weaponData.WeaponSprite,
+                (
+                    weaponData.WeaponSprite,
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
