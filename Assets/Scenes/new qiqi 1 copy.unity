@@ -1692,7 +1692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &639914656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2398,7 +2398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_Name
-      value: RedRandom
+      value: RightRandom
       objectReference: {fileID: 0}
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: _weaponManager
@@ -5817,7 +5817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_Name
-      value: BlueRandom
+      value: LeftRandom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8099782107412607348, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: _weaponManager
