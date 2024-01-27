@@ -28,6 +28,7 @@ public class Weapon : MonoBehaviour
     
     [Header("fx")]
     public GameObject AttackFx;
+    public GameObject SecondAttackFx;
     public GameObject Bullet;
 
     // Serialized variable for customizable keycode
@@ -49,9 +50,10 @@ public class Weapon : MonoBehaviour
             switch (_WeaponRange)
             {
                 case WeaponRange.long_range: 
-                    var bullet =Instantiate(Bullet, transform.position, Quaternion.identity);
+                    var bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
+                    Instantiate(AttackFx, transform.position, Quaternion.identity);
                     bullet.GetComponent<Bullet>().targetPosition = Crosshair.transform.position;
-                    bullet.GetComponent<Bullet>().AttackFx = AttackFx;
+                    bullet.GetComponent<Bullet>().AttackFx = SecondAttackFx;
                     bullet.GetComponent<Bullet>().AttackArea = AttackArea;
 
 
