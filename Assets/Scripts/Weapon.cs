@@ -49,7 +49,12 @@ public class Weapon : MonoBehaviour
             switch (_WeaponRange)
             {
                 case WeaponRange.long_range: 
-                    Instantiate(Bullet, Crosshair.transform.position, Quaternion.identity);
+                    var bullet =Instantiate(Bullet, transform.position, Quaternion.identity);
+                    bullet.GetComponent<Bullet>().targetPosition = Crosshair.transform.position;
+                    bullet.GetComponent<Bullet>().AttackFx = AttackFx;
+                    bullet.GetComponent<Bullet>().AttackArea = AttackArea;
+
+
                     break;
                 
                 case WeaponRange.melee:  

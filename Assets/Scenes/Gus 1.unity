@@ -175,6 +175,9 @@ MonoBehaviour:
   PlayerSprite: {fileID: 4212842458880445900}
   AttackArea: {fileID: 5664461070077914191, guid: 02a8bd4da1a5a6d4b8b4b668ea176643, type: 3}
   Crosshair: {fileID: 1382851891}
+  _WeaponRange: 1
+  AttackFx: {fileID: 4293212646710098275, guid: 80878ab3bbfe1ff4583084b22a452c19, type: 3}
+  Bullet: {fileID: 2070678774258251384, guid: 7e25e5c018ac4574a9ff446a37389c1a, type: 3}
   rotationKeyCode: 32
 --- !u!1 &391186620
 GameObject:
@@ -506,6 +509,9 @@ MonoBehaviour:
   PlayerSprite: {fileID: 0}
   AttackArea: {fileID: 0}
   Crosshair: {fileID: 0}
+  _WeaponRange: 0
+  AttackFx: {fileID: 0}
+  Bullet: {fileID: 0}
   rotationKeyCode: 32
 --- !u!4 &944972385
 Transform:
@@ -700,7 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7506690702678378718}
   smoothSpeed: 5
-  maxDistance: 3
+  maxDistance: 5
   hideThreshold: 0.5
 --- !u!50 &1382851895
 Rigidbody2D:
