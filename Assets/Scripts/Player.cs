@@ -122,19 +122,21 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("CheckPoint"))
         {
+            var score = GameManager.Instance.GetComponent<ScoreCount>();
+            var checkPoint = GameManager.Instance.GetComponent<CheckPoint>();
             if (!isBullying && playerIndex == 0)
             {
-                GameManager.Instance.GetComponent<CheckPoint>().spawnCheck = false;
-                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer1Score(1);
+                checkPoint.spawnCheck = false;
+                score.IncreasePlayer1Score(1);
                 Destroy(other.gameObject, 0.2f);
-                StartCoroutine(GameManager.Instance.GetComponent<CheckPoint>().RandomSpawnCheckPoint());
+                StartCoroutine(checkPoint.RandomSpawnCheckPoint());
             }
             if (!isBullying && playerIndex == 1)
             {
-                GameManager.Instance.GetComponent<CheckPoint>().spawnCheck = false;
-                GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer2Score(1);
+                checkPoint.spawnCheck = false;
+                score.IncreasePlayer2Score(1);
                 Destroy(other.gameObject, 0.2f);
-                StartCoroutine(GameManager.Instance.GetComponent<CheckPoint>().RandomSpawnCheckPoint());
+                StartCoroutine(checkPoint.RandomSpawnCheckPoint());
             }
         }
     }
