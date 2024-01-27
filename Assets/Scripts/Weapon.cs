@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
     public GameObject Bullet;
     public GameObject Trap;
 
-    private Sprite bulletSprite;
+    public Sprite bulletSprite;
 
 
     // Serialized variable for customizable keycode

@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1299653215747472503}
   smoothSpeed: 5
-  maxDistance: 5
+  maxDistance: 4
   hideThreshold: 0.5
 --- !u!50 &1382851895
 Rigidbody2D:
@@ -2026,6 +2026,10 @@ PrefabInstance:
       propertyPath: Crosshair
       value: 
       objectReference: {fileID: 1382851891}
+    - target: {fileID: 2457751001480810971, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
+      propertyPath: testData
+      value: 
+      objectReference: {fileID: 11400000, guid: 02d55cad811898f4aa4f55615b9a8f63, type: 2}
     - target: {fileID: 3980215753427503734, guid: 9914cd201373e0a41abfd7c2c4df01ff, type: 3}
       propertyPath: Trap
       value: 
