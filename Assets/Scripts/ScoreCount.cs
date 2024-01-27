@@ -6,10 +6,21 @@ public class ScoreCount : MonoBehaviour
 {
     [Header("Player 1")]
     [SerializeField] private float player1Score;
+
+    public float Player1Score
+    {
+        get => player1Score;
+        set => player1Score = value;
+    }
     
     [Header("Player 2")]
     [SerializeField] private float player2Score;
-    
+
+    public float Player2Score
+    {
+        get => player2Score;
+        set => player1Score = value;
+    }
     // Start is called before the first frame update
     void Start()
     {

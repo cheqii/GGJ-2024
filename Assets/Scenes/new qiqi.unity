@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 711686817}
   - component: {fileID: 711686816}
   m_Layer: 0
-  m_Name: Test
+  m_Name: RandomWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
