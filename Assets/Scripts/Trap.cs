@@ -39,7 +39,10 @@ public class Trap : MonoBehaviour
 
     void Reach()
     {
-        Instantiate(TrapObject, transform.position, Quaternion.identity);
+        var trap = Instantiate(TrapObject, transform.position, Quaternion.identity);
+
+        trap.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+        
         Instantiate(AttackFx, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }

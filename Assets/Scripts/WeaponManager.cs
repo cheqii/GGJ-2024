@@ -35,7 +35,9 @@ public class WeaponManager : MonoBehaviour
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
-                    weaponData.damage
+                    weaponData.damage,
+                    weaponData.BulletSprite
+
                 );
                 break;
             
@@ -50,7 +52,8 @@ public class WeaponManager : MonoBehaviour
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
-                    weaponData.damage
+                    weaponData.damage,
+                    weaponData.BulletSprite
                 );
                 
                 
@@ -65,7 +68,9 @@ public class WeaponManager : MonoBehaviour
                     weaponData.WeaponCooldown,
                     weaponData.Range,
                     weaponData.WeaponRotation,
-                weaponData.damage
+                weaponData.damage,
+                    weaponData.BulletSprite
+
 
                         );
                 
