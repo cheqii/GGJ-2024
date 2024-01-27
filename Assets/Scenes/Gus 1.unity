@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5293151c2f79f6243af907e2c40b1202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRenderer: {fileID: 0}
+  weaponRenderer: {fileID: 1803242553}
   rotationSpeed: 1000
   rotationBackSpeed: 500
   desiredRotationAngle: 90
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5293151c2f79f6243af907e2c40b1202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRenderer: {fileID: 0}
+  weaponRenderer: {fileID: 560039584}
   rotationSpeed: 1000
   rotationBackSpeed: 500
   desiredRotationAngle: 90
@@ -1370,6 +1370,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!212 &1803242553 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1899617489819854374, guid: ebed04f53b2f3b44786eee5aae521430, type: 3}
+  m_PrefabInstance: {fileID: 7850235765675534460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1804872160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   melee: {fileID: 75788561}
   longRange: {fileID: 223119496}
+  testData: {fileID: 0}
 --- !u!4 &7506690702678378718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9149318144567432203, guid: ebed04f53b2f3b44786eee5aae521430, type: 3}

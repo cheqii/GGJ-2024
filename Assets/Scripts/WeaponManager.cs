@@ -7,7 +7,16 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] private Weapon melee;
     [SerializeField] private Weapon longRange;
-    
+
+    [Header("**for debug only**")]
+    [SerializeField] private WeaponData testData;
+
+
+
+    public void SetWeaponTest()
+    {
+        SetWeapon(testData);
+    }
 
     public void SetWeapon(WeaponData weaponData)
     {
