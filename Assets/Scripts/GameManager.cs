@@ -1,14 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
-    
+
+    [Header("Player 1")]
+    public TextMeshProUGUI player1ScoreText;
+
+    [Header("Player 2")]
+    public TextMeshProUGUI player2ScoreText;
 
     private void Awake()
     {

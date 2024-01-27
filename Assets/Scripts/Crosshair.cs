@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SmoothFollow : MonoBehaviour
+public class Crosshair : MonoBehaviour
 {
     public Transform player;
     public float smoothSpeed = 5f;
