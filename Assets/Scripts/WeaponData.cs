@@ -6,6 +6,8 @@ public class WeaponData : ScriptableObject
     public string weaponName;
     public Sprite weaponIcon;
 
+
+    public int damage;
     public Weapon.WeaponRange WeaponType;
     public Sprite WeaponSprite;
     public Sprite BulletSprite;

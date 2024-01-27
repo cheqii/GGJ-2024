@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61feffd70ef4d3149bf5f080d927990b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 0}
-  curveSpeed: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  curveSpeed: 0.2
   arrivalThreshold: 0.1
   AttackArea: {fileID: 0}
   AttackFx: {fileID: 0}
