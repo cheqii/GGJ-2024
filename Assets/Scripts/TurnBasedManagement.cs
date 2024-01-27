@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microlight.MicroBar;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 
@@ -11,12 +12,13 @@ public class TurnBasedManagement : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float turnTime;
     [SerializeField] private float timer;
-
     public float Timer
     {
         get => timer;
         set => timer = value;
     }
+
+    private bool isPaused;
 
     [Header("About Player")]
     [SerializeField] private bool player1BullyTurn;
@@ -24,15 +26,13 @@ public class TurnBasedManagement : MonoBehaviour
     
     [SerializeField] private Nf_GameEvent endRoundEvent;
 
-    [Header("Random Items")]
-    [SerializeField] private List<RandomItem> randomItems;
+    public MMF_Player feedback;
 
     // Start is called before the first frame update
     void Start()
     {
-        timer = turnTime;
+        StartTimer();
         // playerList[1]._MicroBar.GetComponent<MicroBar>().Initialize(playerList[1].CurrentHealth);
-        EndTurn();
         try
         {
             Player1BullyTurn();
@@ -46,25 +46,18 @@ public class TurnBasedManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!randomItems[0].IsMoving && !randomItems[0].IsMoving)
+        if (!isPaused)
         {
-            timer -= Time.deltaTime;
-            // StartCoroutine(RandomItems());
-        }
-        
-        if (timerText != null)
-        {
-            int minutes = Mathf.FloorToInt(timer / 60);
-            int seconds = Mathf.FloorToInt(timer % 60);
-
-            // timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-            timerText.text = seconds.ToString();
-        }
-
-        if (timer <= 0)
-        {
-            EndTurn();
-            StartTurn();
+            if (timer > 0f)
+            {
+                timer -= Time.deltaTime;
+                UpdateTimerDisplay();
+            }
+            else
+            {
+                OnTimerEnd();
+                StartTurn();
+            }
         }
     }
     
@@ -94,21 +87,15 @@ public class TurnBasedManagement : MonoBehaviour
     {
         // End turn logic, if any
         // random new weapon
-        // endRoundEvent.Raise();
+        endRoundEvent.Raise();
         
         // randomItems[0].transform.parent.parent.parent.gameObject.SetActive(true);
-        
-        randomItems[0].StartMoving();
-        randomItems[1].StartMoving();
     }
 
     void Player1BullyTurn()
     {
         Debug.Log("Player 1 bullying turn.");
-        
-        // randomItems[0].StartMoving();
-        // randomItems[1].StartMoving();
-        
+
         playerList[0].IsBullying = true;
         playerList[1].IsBullying = false; 
         
@@ -123,10 +110,7 @@ public class TurnBasedManagement : MonoBehaviour
     void Player2BullyTurn()
     {
         Debug.Log("Player 2 bullying turn.");
-        
-        // randomItems[0].StartMoving();
-        // randomItems[1].StartMoving();
-        
+
         playerList[1].IsBullying = true;
         playerList[0].IsBullying = false;
         
@@ -137,9 +121,45 @@ public class TurnBasedManagement : MonoBehaviour
         playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
     }
 
-    IEnumerator RandomItems()
+    void UpdateTimerDisplay()
     {
-        yield return new WaitForSeconds(0.2f);
-        randomItems[0].transform.parent.parent.parent.gameObject.SetActive(false);
+        if (timerText != null)
+        {
+            timerText.text = Mathf.CeilToInt(timer).ToString();
+        }
+    }
+
+    void OnTimerEnd()
+    {
+        Debug.Log("Time's up!");
+        BlankMethod();
+        ResetTimer(); // Optionally reset the timer after it reaches zero
+    }
+
+    void BlankMethod()
+    {
+        feedback.PlayFeedbacks();
+    }
+
+    public void StartTimer()
+    {
+        isPaused = false;
+        timer = turnTime;
+    }
+
+    public void PauseTimer()
+    {
+        isPaused = true;
+    }
+
+    public void ResumeTimer()
+    {
+        isPaused = false;
+    }
+
+    public void ResetTimer()
+    {
+        timer = turnTime;
+        UpdateTimerDisplay(); // Update the display when resetting the timer
     }
 }
