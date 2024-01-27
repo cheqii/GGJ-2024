@@ -20,4 +20,4 @@ MonoBehaviour:
   BulletSprite: {fileID: 0}
   Range: 2
   WeaponCooldown: 1
-  WeaponRotation: 90
+  WeaponRotation: -90
