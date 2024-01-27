@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microlight.MicroBar;
+using MoreMountains.Feedbacks;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -88,6 +89,7 @@ public class Player : MonoBehaviour
 
 
     public GameObject Blood;
+    public MMF_Player ShakeFeedback;
 
     #endregion
 
@@ -144,7 +146,7 @@ public class Player : MonoBehaviour
     public void DeceaseHealth(float value)
     {
         Instantiate(Blood, transform.position, Quaternion.identity);
-        
+        ShakeFeedback.PlayFeedbacks();
         if (currentHealth > 0 && !isBullying)
         {
             currentHealth -= value;
