@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class SwitchSlots : MonoBehaviour
@@ -7,15 +8,6 @@ public class SwitchSlots : MonoBehaviour
 
     public RandomItem randomItemA;
     public RandomItem randomItemB;
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("L");
-            SwithSlotsAB();
-        }
-    }
 
     public void SwithSlotsAB()
     {
