@@ -36,11 +36,19 @@ public class DamageArea : MonoBehaviour
                         return;
                     }   
                     
+                    other.GetComponent<Rigidbody2D>().AddForceAtPosition( GetDirection(transform.position, other.transform.position)*1000,transform.position);
+
+                    
                     // Start a coroutine to apply damage with a delay
                     StartCoroutine(ApplyDamageWithDelay(player));
                 }
         }
          
+    }
+    
+    Vector2 GetDirection(Vector2 from, Vector2 to)
+    {
+        return to - from;
     }
     
     
