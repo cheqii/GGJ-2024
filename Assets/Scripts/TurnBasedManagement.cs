@@ -84,9 +84,18 @@ public class TurnBasedManagement : MonoBehaviour
     {
         Debug.Log("Player 1 bullying turn.");
         playerList[0].IsBullying = true;
-        playerList[1].IsBullying = false;
-        playerList[0].GetComponent<Transform>().localScale = new Vector3(1.2f, 1.2f, 1f);
-        playerList[1].GetComponent<Transform>().localScale = new Vector3(0.7f, 0.7f, 1f);
+        playerList[1].IsBullying = false; 
+        
+        playerList[0].GetComponent<Transform>().localScale = new Vector3(5f, 5f, 1f);
+        playerList[1].GetComponent<Transform>().localScale = new Vector3(3.5f, 3.5f, 1f);
+       
+        // playerList[0].CurrentHealth = playerList[0].MaxHealth;
+        // playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
+        playerList[1].CurrentHealth = playerList[1].MaxHealth;
+        playerList[1]._MicroBar.UpdateHealthBar(playerList[1].CurrentHealth);
+        // playerList[0]._MicroBar.gameObject.SetActive(false);
+        // playerList[1].CurrentHealth = playerList[1].MaxHealth;
+        // playerList[1]._MicroBar.gameObject.SetActive(true);
         // Add your logic for method B here
     }
 
@@ -95,8 +104,14 @@ public class TurnBasedManagement : MonoBehaviour
         Debug.Log("Player 2 bullying turn.");
         playerList[1].IsBullying = true;
         playerList[0].IsBullying = false;
-        playerList[1].GetComponent<Transform>().localScale = new Vector3(1.2f, 1.2f, 1f);
-        playerList[0].GetComponent<Transform>().localScale = new Vector3(0.7f, 0.7f, 1f);
-        // Add your logic for method A here
+        
+        playerList[1].GetComponent<Transform>().localScale = new Vector3(5f, 5f, 1f);
+        playerList[0].GetComponent<Transform>().localScale = new Vector3(3.5f, 3.5f, 1f);
+       
+        playerList[0].CurrentHealth = playerList[0].MaxHealth;
+        playerList[0]._MicroBar.UpdateHealthBar(playerList[0].CurrentHealth);
+        // playerList[1].CurrentHealth = playerList[1].MaxHealth;
+        // playerList[1]._MicroBar.UpdateHealthBar(playerList[1].CurrentHealth);
+        
     }
 }

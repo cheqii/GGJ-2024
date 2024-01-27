@@ -23,16 +23,8 @@ public class DamageArea : MonoBehaviour
         
         if (!damageApplied && other.CompareTag("Player") )
         {
-            if (other.GetComponent<Player>() != null)
-            {
-                if (other.GetComponent<Player>()._PlayerType != Target)
-                {
-                    return;
-                }
-                
-                
-                // Check if the collided object is the player
-                PlayerHealth player = other.GetComponent<PlayerHealth>();
+            // Check if the collided object is the player
+            Player player = other.GetComponent<Player>();
 
                 if (player != null)
                 {
@@ -47,7 +39,7 @@ public class DamageArea : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         
-            Debug.Log("Exited trigger area");
+        Debug.Log("Exited trigger area");
 
         if (other.CompareTag("Player"))
         {
@@ -57,7 +49,7 @@ public class DamageArea : MonoBehaviour
     }
 
     // Coroutine to apply damage to the player with a delay
-    IEnumerator ApplyDamageWithDelay(PlayerHealth player)
+    IEnumerator ApplyDamageWithDelay(Player player)
     {
         // Set damageApplied to true to avoid applying damage again during the delay
         damageApplied = true;
@@ -66,7 +58,7 @@ public class DamageArea : MonoBehaviour
         yield return new WaitForSeconds(damageDelay);
 
         // Apply damage to the player
-        player.TakeDamage(damageAmount);
+        player.DeceaseHealth(damageAmount);
 
         // Reset damageApplied after the delay
         damageApplied = false;
