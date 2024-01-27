@@ -25,8 +25,8 @@ public class RandomItem : MonoBehaviour
 
     private void Start()
     {
-        weaponNameText.text = "";
         rectTransform = GetComponent<RectTransform>();
+        weaponNameText.text = "";
     }
 
     private void Update()
@@ -35,7 +35,6 @@ public class RandomItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && currentRound < totalRounds && !isMoving)
         {
             StartMoving();
-            weaponNameText.text = "";
         }
 
         if (isMoving && currentRound < totalRounds)
@@ -49,6 +48,7 @@ public class RandomItem : MonoBehaviour
     {
         isMoving = true;
         StartCoroutine(MoveRoutine());
+        weaponNameText.text = "";
     }
 
     private void MoveImage()
