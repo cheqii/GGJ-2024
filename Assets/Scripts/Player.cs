@@ -184,6 +184,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        // SoundManager.Instance.Play("Dead");
         transform.position = new Vector3(transform.position.x, transform.position.y, -1000f);
     }
 

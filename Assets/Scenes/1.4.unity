@@ -2662,22 +2662,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4109718607284043464, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1622444409}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
---- !u!1 &600225684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4109718607284043464, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
-  m_PrefabInstance: {fileID: 600225683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &600225685 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
   m_PrefabInstance: {fileID: 600225683}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600225684}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d2fa2e8ee979e4b8f8142d3d4c2f29, type: 3}
@@ -2688,7 +2680,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5224417165346897547, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
   m_PrefabInstance: {fileID: 600225683}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600225684}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb4ece3ee7cbec4e905b7caba1174bd, type: 3}
@@ -4724,10 +4716,6 @@ PrefabInstance:
     - target: {fileID: 3576705347818521647, guid: e3bcf93a8bde14c44b3a95f511dd7593, type: 3}
       propertyPath: m_Name
       value: SoundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576705347818521647, guid: e3bcf93a8bde14c44b3a95f511dd7593, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9026,23 +9014,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622019662}
   m_CullTransparentMesh: 1
---- !u!114 &1622444409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600225684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dcfb8341bd2e56449901907b6616a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointPrefab: {fileID: 4933772173655112549, guid: baf755674d37b1641bb680f347030a2a, type: 3}
-  spawnAreaWidth: 10
-  spawnAreaHeight: 5
-  respawnDelay: 2
-  spawnCheck: 0
 --- !u!1001 &1642201337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10956,6 +10927,8 @@ MonoBehaviour:
   moveUpKey: 273
   moveDownKey: 274
   dashKey: 257
+  isDashing: 0
+  isDashReady: 1
   spriteTransform: {fileID: 1830019421093745297}
   DashEffect: {fileID: 8009518900353100956}
   _springRotation: {fileID: 1461936523559315841}
@@ -11032,6 +11005,8 @@ MonoBehaviour:
   moveUpKey: 119
   moveDownKey: 115
   dashKey: 304
+  isDashing: 0
+  isDashReady: 1
   spriteTransform: {fileID: 984056301688404250}
   DashEffect: {fileID: 2248604291459953685}
   _springRotation: {fileID: 8944999849973111306}
@@ -11200,7 +11175,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8928593707409759078}
   - {fileID: 7137920362851754049}
   - {fileID: 5852714006463841039}
   m_Father: {fileID: 9187785388516906585}
@@ -12367,8 +12341,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   _microBar: {fileID: 1572197233650547883}
-  spawnAreaWidth: 10
-  spawnAreaHeight: 5
+  spawnAreaWidth: 15
+  spawnAreaHeight: 10
   respawnDelay: 1
   isDead: 0
   isBullying: 0
@@ -13731,13 +13705,13 @@ Transform:
   m_GameObject: {fileID: 8298715458868960084}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26599985, y: 0.32199997, z: 0}
-  m_LocalScale: {x: 0.49999988, y: 0.1, z: 1}
+  m_LocalPosition: {x: -0.26599985, y: 0.30699998, z: 0}
+  m_LocalScale: {x: 0.49999985, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5934699823723521468}
   - {fileID: 3559672175309385915}
-  m_Father: {fileID: 1830019421093745297}
+  m_Father: {fileID: 9187785388516906585}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8928593707409759079
 MonoBehaviour:
@@ -13830,8 +13804,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   _microBar: {fileID: 8051449336957237084}
-  spawnAreaWidth: 10
-  spawnAreaHeight: 5
+  spawnAreaWidth: 15
+  spawnAreaHeight: 10
   respawnDelay: 1
   isDead: 0
   isBullying: 0
@@ -13858,6 +13832,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1830019421093745297}
+  - {fileID: 8928593707409759078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
