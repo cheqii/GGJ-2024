@@ -16,6 +16,8 @@ public class SlowTrap : MonoBehaviour
 
     private void Start()
     {
+        Destroy(this.gameObject,2f);
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
