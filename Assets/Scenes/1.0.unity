@@ -1904,7 +1904,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241cf46383940174d866a48d88a222c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: BGM
+    clip: {fileID: 8300000, guid: 26f6921f8c499334faa65b24d7173fe2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loops: 1
+    source: {fileID: 0}
 --- !u!4 &445038210
 Transform:
   m_ObjectHideFlags: 0
@@ -3813,6 +3819,10 @@ MonoBehaviour:
   _statusData: {fileID: 11400000, guid: b88aa0d057fa4b04985fd314f350fafa, type: 2}
   Blood: {fileID: 4235143930754779299, guid: d406be55bb4c23341ab49962ef2ba699, type: 3}
   ShakeFeedback: {fileID: 936086140}
+  pointParticle: {fileID: 0}
+  bluePointFloatingText: {fileID: 0}
+  redPointFloatingText: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!70 &767223606
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9908,6 +9918,10 @@ MonoBehaviour:
   _statusData: {fileID: 11400000, guid: b88aa0d057fa4b04985fd314f350fafa, type: 2}
   Blood: {fileID: 4235143930754779299, guid: d406be55bb4c23341ab49962ef2ba699, type: 3}
   ShakeFeedback: {fileID: 936086140}
+  pointParticle: {fileID: 0}
+  bluePointFloatingText: {fileID: 0}
+  redPointFloatingText: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!114 &4204103056742057332
 MonoBehaviour:
   m_ObjectHideFlags: 0
