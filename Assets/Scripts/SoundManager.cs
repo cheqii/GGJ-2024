@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -43,5 +42,4 @@ public class SoundManager : MonoBehaviour
         }
         s.source.Play();
     }
-
 }

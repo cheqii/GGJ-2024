@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     public MMF_Player winLoseFeedback;
 
     public Player.PlayerType playerWinner;
+
+    public SceneLoader redWinScene;
+    public SceneLoader blueWinScene;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -33,21 +37,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckPlayerScoreCount();
     }
 
     public void CheckPlayerScoreCount()
     {
         if (scoreCount.Player1Score >= maxPlayerScore)
         {
-            playerWinner = Player.PlayerType.BluePlayer;
-            winLoseFeedback.PlayFeedbacks();
+            blueWinScene.LoadScene();
         }
 
         if (scoreCount.Player2Score >= maxPlayerScore)
         {
-            playerWinner = Player.PlayerType.RedPlayer;
-            winLoseFeedback.PlayFeedbacks();
+            redWinScene.LoadScene();
+
         }
     }
 }
