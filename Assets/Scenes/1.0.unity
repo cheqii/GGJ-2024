@@ -3983,6 +3983,8 @@ MonoBehaviour:
   moveUpKey: 273
   moveDownKey: 274
   dashKey: 257
+  isDashing: 0
+  isDashReady: 1
   spriteTransform: {fileID: 1056773047}
   DashEffect: {fileID: 1056773046}
   _springRotation: {fileID: 767223608}
@@ -9174,7 +9176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 692c955641e298f4a961239565609108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 1.3
+  sceneToLoad: 1.4
 --- !u!114 &1779898132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10109,6 +10111,8 @@ MonoBehaviour:
   moveUpKey: 119
   moveDownKey: 115
   dashKey: 304
+  isDashing: 0
+  isDashReady: 1
   spriteTransform: {fileID: 8419721172540110416}
   DashEffect: {fileID: 768748669646724234}
   _springRotation: {fileID: 743594205137784695}
