@@ -41,7 +41,7 @@ public class LineDrawer : MonoBehaviour
             line.SetPosition(1, targetObject.transform.position);
         }
 
-        if (player != null && checkPlayer.IsBullying && targetObject != null || targetObject == null)
+        if (player != null && checkPlayer.IsBullying && targetObject != null || targetObject == null || checkPlayer.IsDead)
         {
             line.SetPosition(0, Vector3.zero);
             line.SetPosition(1, Vector3.zero);
