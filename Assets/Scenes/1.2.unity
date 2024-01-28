@@ -148,6 +148,10 @@ PrefabInstance:
       value: 276
       objectReference: {fileID: 0}
     - target: {fileID: 909321737389887947, guid: 9698f0831b242b345b3f0bbdbe9daebf, type: 3}
+      propertyPath: dashCooldown
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 909321737389887947, guid: 9698f0831b242b345b3f0bbdbe9daebf, type: 3}
       propertyPath: moveRightKey
       value: 275
       objectReference: {fileID: 0}
@@ -2340,6 +2344,10 @@ PrefabInstance:
       propertyPath: feedback
       value: 
       objectReference: {fileID: 711686817}
+    - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
+      propertyPath: turnTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1722466287259049468, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: timerText
       value: 
@@ -6727,6 +6735,10 @@ PrefabInstance:
     - target: {fileID: 1188253685230279035, guid: a7465ab10dd378342a9f119e2af5f444, type: 3}
       propertyPath: moveLeftKey
       value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188253685230279035, guid: a7465ab10dd378342a9f119e2af5f444, type: 3}
+      propertyPath: dashCooldown
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1188253685230279035, guid: a7465ab10dd378342a9f119e2af5f444, type: 3}
       propertyPath: moveRightKey
