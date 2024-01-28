@@ -57,6 +57,7 @@ public class Weapon : MonoBehaviour
             switch (_WeaponRange)
             {
                 case WeaponRange.long_range: 
+                    SoundManager.Instance.Play("LongRange");
                     var bullet = Instantiate(Bullet, transform.position, Quaternion.identity);
                     bullet.GetComponent<Bullet>().damage = damage;
                     var atkFx = Instantiate(AttackFx, transform.position, Quaternion.identity);
@@ -70,12 +71,14 @@ public class Weapon : MonoBehaviour
                     break;
                 
                 case WeaponRange.melee:  
+                    SoundManager.Instance.Play("Melee");
                     var atk = Instantiate(AttackArea, Crosshair.transform.position, Quaternion.identity);
                     atk.GetComponent<DamageArea>().damageAmount = damage;
                     Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
                     break;
                 
                 case WeaponRange.trap:
+                    SoundManager.Instance.Play("Trap");
                     var _trap = Instantiate(Trap, transform.position, Quaternion.identity);
                     _trap.GetComponent<Trap>().targetPosition = Crosshair.transform.position;
                     Instantiate(AttackFx, Crosshair.transform.position, Quaternion.identity);
