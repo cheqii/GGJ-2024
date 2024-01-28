@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: I saw this guy yesterday
   weaponIcon: {fileID: 21300000, guid: 5961d87d932024341bc6f1905adcf8f0, type: 3}
-  damage: 10
+  damage: 15
   WeaponType: 0
   WeaponSprite: {fileID: 21300000, guid: 5961d87d932024341bc6f1905adcf8f0, type: 3}
   BulletSprite: {fileID: 0}
