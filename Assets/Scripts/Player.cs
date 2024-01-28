@@ -150,6 +150,7 @@ public class Player : MonoBehaviour
     public void DeceaseHealth(float value)
     {
         Instantiate(Blood, transform.position, Quaternion.identity);
+        GetComponent<BloodSpawner>().SpawnObjects();
         ShakeFeedback.PlayFeedbacks();
         if (currentHealth > 0 && !isBullying)
         {
