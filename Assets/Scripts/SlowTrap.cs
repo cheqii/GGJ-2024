@@ -62,21 +62,53 @@ public class SlowTrap : MonoBehaviour
             spriteRenderer.enabled = false;
         }
 
-        isPlayerSlowed = true;
+        if (isPlayerSlowed == false)
+        {
+            isPlayerSlowed = true;
 
-        // Store original speed of player
-        originalSpeed = playerMovement.speed;
+            // Store original speed of player
+            originalSpeed = playerMovement.speed;
 
-        // Decrease the speed to 20% of the original speed
-        playerMovement.speed = originalSpeed * percentSpeed;
+            // Decrease the speed to 20% of the original speed
+            playerMovement.speed = originalSpeed * percentSpeed;
 
-        // Wait for the specified duration
-        yield return new WaitForSeconds(slowDuration);
+            // Wait for the specified duration
+            yield return new WaitForSeconds(slowDuration);
 
-        // Restore the original speed
-        playerMovement.speed = originalSpeed;
-        isPlayerSlowed = false;
+            // Restore the original speed
+            playerMovement.speed = originalSpeed;
+            isPlayerSlowed = false;
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Already slowed.");
+
+            // Restore the original speed
+            playerMovement.speed = originalSpeed;
+            isPlayerSlowed = false;
+
+            Destroy(gameObject);
+
+            // ----------------------------------
+
+            isPlayerSlowed = true;
+
+            // Store original speed of player
+            originalSpeed = playerMovement.speed;
+
+            // Decrease the speed to 20% of the original speed
+            playerMovement.speed = originalSpeed * percentSpeed;
+
+            // Wait for the specified duration
+            yield return new WaitForSeconds(slowDuration);
+
+            // Restore the original speed
+            playerMovement.speed = originalSpeed;
+            isPlayerSlowed = false;
+
+            Destroy(gameObject);
+        }
     }
 }

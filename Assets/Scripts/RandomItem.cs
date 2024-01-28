@@ -10,6 +10,7 @@ public class RandomItem : MonoBehaviour
     [SerializeField] private List<WeaponData> weapons;
     [SerializeField] private List<Sprite> imageList;
     [SerializeField] private TMP_Text weaponNameText;
+    [SerializeField] private Image selectedWeaponUI;
 
     [Header("Random Speed")]
     [SerializeField] private float initialSpeed = 1000.0f;
@@ -88,6 +89,7 @@ public class RandomItem : MonoBehaviour
                     // Get data from WeaponData
                     Debug.Log("Weapon name: " + selectedWeapon.weaponName);
                     weaponNameText.text = selectedWeapon.weaponName;
+                    selectedWeaponUI.sprite = selectedWeapon.weaponIcon;
                     
                     _weaponManager.SetWeapon(selectedWeapon);
                 }
