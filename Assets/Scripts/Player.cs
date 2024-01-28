@@ -91,6 +91,15 @@ public class Player : MonoBehaviour
     public GameObject Blood;
     public MMF_Player ShakeFeedback;
 
+    public GameObject pointParticle;
+
+    [Header("Floating Text")]
+    [SerializeField] private GameObject bluePointFloatingText;
+    [SerializeField] private GameObject redPointFloatingText;
+
+    public GameObject canvas;
+    
+    
     #endregion
 
     void Start()
@@ -128,6 +137,9 @@ public class Player : MonoBehaviour
             var checkPoint = GameManager.Instance.GetComponent<CheckPoint>();
             if (!isBullying && playerIndex == 0)
             {
+                SpawnFloatingText(bluePointFloatingText, 1.5f, 1f);
+                Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
+                ShakeFeedback.PlayFeedbacks();
                 checkPoint.spawnCheck = false;
                 score.IncreasePlayer1Score(1);
                 Destroy(other.gameObject, 0.2f);
@@ -137,6 +149,9 @@ public class Player : MonoBehaviour
             }
             if (!isBullying && playerIndex == 1)
             {
+                SpawnFloatingText(redPointFloatingText, 1.5f, 1f);
+                Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
+                ShakeFeedback.PlayFeedbacks();
                 checkPoint.spawnCheck = false;
                 score.IncreasePlayer2Score(1);
                 Destroy(other.gameObject, 0.2f);
@@ -166,7 +181,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        transform.position = new Vector3(1000f, 1000f, 1f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1000f);
     }
 
     IEnumerator RespawnPlayer()
@@ -190,14 +205,24 @@ public class Player : MonoBehaviour
             if (playerIndex == 1 && !isBullying) // if player1 is bullying then player 1 will get score by bully player 2
             {
                 print($"Player 1 get score");
+                SpawnFloatingText(bluePointFloatingText, 1.5f, 1f);
                 GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer1Score(1);
             }
 
             if (playerIndex == 0 && !isBullying) // if player2 is bullying then player 2 will get score by bully player 1
             {
                 print($"Player 2 get score");
+                SpawnFloatingText(redPointFloatingText, 1.5f, 1f);
                 GameManager.Instance.GetComponent<ScoreCount>().IncreasePlayer2Score(1);
             }
         }
+    }
+
+    public void SpawnFloatingText(GameObject prefab, float height , float delay)
+    {
+        var textTrans = new Vector3(transform.position.x, transform.position.y + height, transform.position.z);
+        var text = Instantiate(prefab, textTrans, quaternion.identity, canvas.transform);
+        
+        Destroy(text, delay);
     }
 }
