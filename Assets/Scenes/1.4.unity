@@ -4843,6 +4843,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6465040301752330760, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_text
+      value: Katana
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465040301752330760, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_fontSize
       value: 42
       objectReference: {fileID: 0}
@@ -9105,6 +9109,14 @@ PrefabInstance:
     - target: {fileID: 3528352853647932034, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_Name
       value: LeftRandom
+      objectReference: {fileID: 0}
+    - target: {fileID: 3611919506923411652, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 561ae1c7d9c7d0c45b9fef4c9265155f, type: 3}
+    - target: {fileID: 6465040301752330760, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
+      propertyPath: m_text
+      value: Treetana
       objectReference: {fileID: 0}
     - target: {fileID: 6465040301752330760, guid: 6a8587639c9baf545b1c12e359997626, type: 3}
       propertyPath: m_fontSize
