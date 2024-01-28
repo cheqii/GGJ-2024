@@ -1,5 +1,6 @@
 using System.Collections;
 using MoreMountains.Feedbacks;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
