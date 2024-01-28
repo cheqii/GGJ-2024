@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: faf7be15e2ac88045a59f9a919d4dc57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -395,23 +395,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 01f6e5919ea42e6449cd411bd30a3477, type: 2}
-  - {fileID: 11400000, guid: bcf6fbd352569944abdb12a0c5804e58, type: 2}
-  - {fileID: 11400000, guid: e01a06e91e573c94d8e8bdee149c861b, type: 2}
-  - {fileID: 11400000, guid: 97152f9d9f9f56b489b0c69488676ec9, type: 2}
-  - {fileID: 11400000, guid: fa6e86d6ab5ea194d88f7c66f3ae596f, type: 2}
-  - {fileID: 11400000, guid: 276f7d0008de4174fafc431822562990, type: 2}
-  - {fileID: 11400000, guid: eb0b512b75463c540b7549ca2e158b17, type: 2}
-  - {fileID: 11400000, guid: 5fe1e03c8a3210042b643b3a3256a18c, type: 2}
+  - {fileID: 11400000, guid: 9702eb43b286da74a99cf0316e4732be, type: 2}
+  - {fileID: 11400000, guid: 88a298aa1a231294cb00545ad7564400, type: 2}
+  - {fileID: 11400000, guid: 49230b1a0b67910448bfbcb9f0f55b95, type: 2}
+  - {fileID: 11400000, guid: de361ae872643d94098cadda2361d5a2, type: 2}
+  - {fileID: 11400000, guid: e3b5caf928428a342b72f13fdc36a487, type: 2}
+  - {fileID: 11400000, guid: ebd745a35313bff4299c7fe4fc9378c0, type: 2}
+  - {fileID: 11400000, guid: 43514cd37c223d8428bf7b31de51af31, type: 2}
+  - {fileID: 11400000, guid: f9afe22d064572943937731255d972a0, type: 2}
+  - {fileID: 11400000, guid: 55025a28a7bbae347b10b5400a56d035, type: 2}
   imageList:
-  - {fileID: 21300000, guid: 84a1ef002c7b3974389e160ed8dc7f53, type: 3}
-  - {fileID: 21300000, guid: 3419ac28a24ee72469e3e1ee899e102e, type: 3}
-  - {fileID: 21300000, guid: a008ab9d7275e834ea505a7411ca4106, type: 3}
-  - {fileID: 21300000, guid: e281e059babf94c4b92b359d3af9bb79, type: 3}
-  - {fileID: 21300000, guid: 083ea90249d547248af2beac7866e45c, type: 3}
-  - {fileID: 21300000, guid: 5961d87d932024341bc6f1905adcf8f0, type: 3}
-  - {fileID: 21300000, guid: d12cd32f88781964b932a98298fdc509, type: 3}
-  - {fileID: 21300000, guid: 17008d5bd38d96747a2add24dc118e9e, type: 3}
+  - {fileID: 21300000, guid: c99e1e08d12a8b44c988b59e0d66a0fd, type: 3}
+  - {fileID: 21300000, guid: acccfe09c54bf6e4d9d631f49b91f466, type: 3}
+  - {fileID: 21300000, guid: 657382f03ac0d974e9a8c02efde335c8, type: 3}
+  - {fileID: 21300000, guid: f4547756e89c1c948931ff66ce18e0bf, type: 3}
+  - {fileID: 21300000, guid: 47d1743c0d0ee81499da6312b63f4c37, type: 3}
+  - {fileID: 21300000, guid: c55ca60fa39f7e848b4e9c64ba97fe0f, type: 3}
+  - {fileID: 21300000, guid: 98786e6e072f59640959a7e10b8d25f1, type: 3}
+  - {fileID: 21300000, guid: 561ae1c7d9c7d0c45b9fef4c9265155f, type: 3}
   weaponNameText: {fileID: 6465040301752330760}
   initialSpeed: 1000
   acceleration: 10
@@ -589,7 +590,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 109, y: 109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6565907661313380718
 CanvasRenderer:
@@ -619,8 +620,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af8dfead9fb049f47ace154a3244140a, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: da3eb569767809f4c95d0397d29bc36a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
