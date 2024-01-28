@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
     public GameObject Blood;
     public MMF_Player ShakeFeedback;
 
+    public GameObject pointParticle;
+
     #endregion
 
     void Start()
@@ -128,6 +130,8 @@ public class Player : MonoBehaviour
             var checkPoint = GameManager.Instance.GetComponent<CheckPoint>();
             if (!isBullying && playerIndex == 0)
             {
+                Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
+                ShakeFeedback.PlayFeedbacks();
                 checkPoint.spawnCheck = false;
                 score.IncreasePlayer1Score(1);
                 Destroy(other.gameObject, 0.2f);
@@ -137,6 +141,8 @@ public class Player : MonoBehaviour
             }
             if (!isBullying && playerIndex == 1)
             {
+                Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
+                ShakeFeedback.PlayFeedbacks();
                 checkPoint.spawnCheck = false;
                 score.IncreasePlayer2Score(1);
                 Destroy(other.gameObject, 0.2f);
