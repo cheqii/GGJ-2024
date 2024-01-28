@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
         RedPlayer,
         BluePlayer
     }
-
     
     #region -Declared Variables-
 
