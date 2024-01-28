@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: ShakeFeedback
       value: 
       objectReference: {fileID: 936086140}
-    - target: {fileID: 5617163886826091017, guid: 9698f0831b242b345b3f0bbdbe9daebf, type: 3}
-      propertyPath: pointParticle
-      value: 
-      objectReference: {fileID: 7606724292231656334, guid: 75cb6f3b0ec897448942e882c59aab40, type: 3}
     - target: {fileID: 5771743445836589032, guid: 9698f0831b242b345b3f0bbdbe9daebf, type: 3}
       propertyPath: Crosshair
       value: 
@@ -4139,7 +4135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &845639694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5910,10 +5906,6 @@ PrefabInstance:
       propertyPath: ShakeFeedback
       value: 
       objectReference: {fileID: 936086140}
-    - target: {fileID: 9171155791184367985, guid: a7465ab10dd378342a9f119e2af5f444, type: 3}
-      propertyPath: pointParticle
-      value: 
-      objectReference: {fileID: 7606724292231656334, guid: 75cb6f3b0ec897448942e882c59aab40, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8184,7 +8176,7 @@ MonoBehaviour:
   checkPointPrefab: {fileID: 4933772173655112549, guid: baf755674d37b1641bb680f347030a2a, type: 3}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 2
+  respawnDelay: 0
   spawnCheck: 0
 --- !u!1001 &1642201337
 PrefabInstance:
