@@ -59,6 +59,7 @@ public class RandomItem : MonoBehaviour
     {
         isMoving = true;
         StartCoroutine(MoveRoutine());
+        SoundManager.Instance.Play("SpinSlot");
         weaponNameText.text = "";
     }
 

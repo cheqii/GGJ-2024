@@ -41,6 +41,7 @@ public class Bullet : MonoBehaviour
         var atk = Instantiate(AttackArea, transform.position, Quaternion.identity);
         atk.GetComponent<DamageArea>().damageAmount = damage;
         Instantiate(AttackFx, transform.position, Quaternion.identity);
-
+        
+        SoundManager.Instance.Play("Explosion");
     }
 }
