@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        transform.position = new Vector3(1000f, 1000f, 1f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1000f);
     }
 
     IEnumerator RespawnPlayer()
