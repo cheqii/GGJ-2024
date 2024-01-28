@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  curveSpeed: 0.2
+  curveSpeed: 0.5
   arrivalThreshold: 0.1
   damage: 0
   AttackArea: {fileID: 0}

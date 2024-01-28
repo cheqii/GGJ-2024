@@ -4151,7 +4151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &845639694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8208,7 +8208,7 @@ MonoBehaviour:
   checkPointPrefab: {fileID: 4933772173655112549, guid: baf755674d37b1641bb680f347030a2a, type: 3}
   spawnAreaWidth: 10
   spawnAreaHeight: 5
-  respawnDelay: 2
+  respawnDelay: 0
   spawnCheck: 0
 --- !u!1001 &1642201337
 PrefabInstance:

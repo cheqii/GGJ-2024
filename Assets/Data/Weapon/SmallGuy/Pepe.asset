@@ -19,5 +19,5 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: ea972b68ba31cdd45a3f8584516921e9, type: 3}
   BulletSprite: {fileID: 21300000, guid: c55ca60fa39f7e848b4e9c64ba97fe0f, type: 3}
   Range: 3
-  WeaponCooldown: 3
+  WeaponCooldown: 0
   WeaponRotation: 90

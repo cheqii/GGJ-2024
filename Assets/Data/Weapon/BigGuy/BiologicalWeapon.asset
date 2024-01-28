@@ -17,7 +17,7 @@ MonoBehaviour:
   damage: 10
   WeaponType: 1
   WeaponSprite: {fileID: 21300000, guid: e281e059babf94c4b92b359d3af9bb79, type: 3}
-  BulletSprite: {fileID: 0}
-  Range: 2
-  WeaponCooldown: 1
+  BulletSprite: {fileID: 21300000, guid: d00582fe7ba65804ea744d3e9b2771b6, type: 3}
+  Range: 4
+  WeaponCooldown: 0
   WeaponRotation: 90
