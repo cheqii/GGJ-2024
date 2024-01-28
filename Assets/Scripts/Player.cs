@@ -132,6 +132,8 @@ public class Player : MonoBehaviour
                 score.IncreasePlayer1Score(1);
                 Destroy(other.gameObject, 0.2f);
                 StartCoroutine(checkPoint.RandomSpawnCheckPoint());
+                FindObjectOfType<CameraZoom>().target = this.transform;
+                FindObjectOfType<CameraZoom>().DoZoom();
             }
             if (!isBullying && playerIndex == 1)
             {
@@ -139,6 +141,8 @@ public class Player : MonoBehaviour
                 score.IncreasePlayer2Score(1);
                 Destroy(other.gameObject, 0.2f);
                 StartCoroutine(checkPoint.RandomSpawnCheckPoint());
+                FindObjectOfType<CameraZoom>().target = this.transform;
+                FindObjectOfType<CameraZoom>().DoZoom();
             }
         }
     }
