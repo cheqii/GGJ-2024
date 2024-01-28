@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movementInput;
     private Vector2 currentVelocity;
-    private bool isDashing = false;
-    private bool isDashReady = true;
+    [SerializeField] private bool isDashing = false;
+    [SerializeField] private bool isDashReady = true;
 
     public Transform spriteTransform;
 
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         // Check for input to dash
         if (Input.GetKeyDown(dashKey) && isDashReady)
         {
+            SoundManager.Instance.Play("Dash");
             StartCoroutine(Dash());
         }
 
@@ -94,10 +95,11 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("Dash is not ready");
 
+         
         DashEffect.PlayFeedbacks();
-
         isDashing = true;
         yield return new WaitForSeconds(dashDuration);
+
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);

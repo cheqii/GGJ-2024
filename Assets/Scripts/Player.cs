@@ -137,6 +137,7 @@ public class Player : MonoBehaviour
             var checkPoint = GameManager.Instance.GetComponent<CheckPoint>();
             if (!isBullying && playerIndex == 0)
             {
+                SoundManager.Instance.Play("CheckPoint");
                 SpawnFloatingText(bluePointFloatingText, 1.5f, 1f);
                 Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
                 ShakeFeedback.PlayFeedbacks();
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour
             }
             if (!isBullying && playerIndex == 1)
             {
+                SoundManager.Instance.Play("CheckPoint");
                 SpawnFloatingText(redPointFloatingText, 1.5f, 1f);
                 Instantiate(pointParticle, other.gameObject.transform.position, quaternion.identity);
                 ShakeFeedback.PlayFeedbacks();
@@ -164,7 +166,9 @@ public class Player : MonoBehaviour
 
     public void DeceaseHealth(float value)
     {
+        SoundManager.Instance.Play("Hurt");
         Instantiate(Blood, transform.position, Quaternion.identity);
+        SoundManager.Instance.Play("BloodSplash");
         GetComponent<BloodSpawner>().SpawnObjects();
         ShakeFeedback.PlayFeedbacks();
         if (currentHealth > 0 && !isBullying)

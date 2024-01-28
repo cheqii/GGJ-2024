@@ -47,7 +47,7 @@ MonoBehaviour:
   sounds:
   - name: BGM
     clip: {fileID: 8300000, guid: 26f6921f8c499334faa65b24d7173fe2, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loops: 1
     source: {fileID: 0}
@@ -55,5 +55,53 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 77d94197e9a4e794293e429ed36dbd29, type: 3}
     volume: 1
     pitch: 1
-    loops: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 8b3f676fe7b41044495a2964396b8ba3, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: Melee
+    clip: {fileID: 8300000, guid: 6cc21d18049d0d046a97eb4da84864ea, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: LongRange
+    clip: {fileID: 8300000, guid: 9728b81e987a02343b8126d1efbf1717, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: Trap
+    clip: {fileID: 8300000, guid: 46c18f9ef79b1914a931296da3adf971, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 7dcc586ea6efc5e4f93721f23ceef587, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: BloodSplash
+    clip: {fileID: 8300000, guid: 070183eaef9cbbf4cba98948e3a9b155, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: CheckPoint
+    clip: {fileID: 8300000, guid: bc5b396c55b663f46b9f1f5654c45b03, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: e5462478ffaf3dd4f9ac3270519dff58, type: 3}
+    volume: 1
+    pitch: 1
+    loops: 0
     source: {fileID: 0}
