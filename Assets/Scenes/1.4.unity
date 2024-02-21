@@ -2589,7 +2589,7 @@ PrefabInstance:
       objectReference: {fileID: 581892621}
     - target: {fileID: 2002081916377761089, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: maxPlayerScore
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2002081916377761089, guid: 473638cc88c495a48a49a582a397e6b0, type: 3}
       propertyPath: player1ScoreText
@@ -4716,6 +4716,10 @@ PrefabInstance:
     - target: {fileID: 3576705347818521647, guid: e3bcf93a8bde14c44b3a95f511dd7593, type: 3}
       propertyPath: m_Name
       value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576705347818521647, guid: e3bcf93a8bde14c44b3a95f511dd7593, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
