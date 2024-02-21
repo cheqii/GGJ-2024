@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/SmoothFollow.cs.meta
+guid: 3f69dbd17d85e504fb218eeffe1631f9
+========
+guid: b7ca2216a87bc9e4680e39d45c9c2a10
+>>>>>>>> origin/qiqiInwza007:Assets/Scripts/GameManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

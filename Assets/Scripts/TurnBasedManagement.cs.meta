@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/WeaponRotate.cs.meta
+guid: e6d2fa2e8ee979e4b8f8142d3d4c2f29
+========
+guid: 1fdb0aae301c6c44c82488dc3b111062
+>>>>>>>> origin/qiqiInwza007:Assets/Scripts/TurnBasedManagement.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
